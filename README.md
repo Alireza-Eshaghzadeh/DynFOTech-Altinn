@@ -1,4 +1,6 @@
-This project is focused on VAT return with direct submission to Altinn in D365FO.
+<img width="1254" height="836" alt="DFT Altinn" src="https://github.com/user-attachments/assets/bc69a248-a252-44a8-a4b3-45781f1a78d6" />
+
+ <br>This project is focused on VAT return with direct submission to Altinn in D365FO. <br>
 
 The solution supports end-to-end handling of the Norwegian VAT return
 (MVA-melding), including:
