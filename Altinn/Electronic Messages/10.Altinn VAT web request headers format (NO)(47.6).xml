@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ERSolutionVersion DateTime="2021-11-18T14:16:14" Description="KB4642184" Number="6" PublicVersionNumber="47.6" VersionStatus="2">
+  <Prerequisites>
+    <ERPrerequisites>
+      <Contents.>
+        <ERPrerequisiteGroup Name="Applicable product version" Type="1">
+          <Contents.>
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.21)" Version="[10.0.960.128,10.0.961)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.22)" Version="[10.0.995.91,10.0.996)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.23)" Version="[10.0.1037.50,10.0.1038)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.24)" Version="10.0.1077.0" />
+          </Contents.>
+        </ERPrerequisiteGroup>
+      </Contents.>
+    </ERPrerequisites>
+  </Prerequisites>
+  <Solution>
+    <ERSolution ID.="{7524F8AE-E691-4073-B8F1-945CE26494AD}" Base="{F793C2A0-0A67-4B95-99B6-054D2FA0625D},47" Name="Altinn VAT web request headers format (NO)">
+      <Vendor>
+        <ERVendor Name="Microsoft" Url="http://microsoft.com" />
+      </Vendor>
+      <Contents.>
+        <Ref. ID.="{F829356D-5A13-4AB3-8713-9414CAAF5D34}" />
+        <Ref. ID.="{61073926-648B-4EE9-A332-EF929D469725}" />
+      </Contents.>
+    </ERSolution>
+  </Solution>
+  <Contents.>
+    <ERFormatVersion ID.="{F829356D-5A13-4AB3-8713-9414CAAF5D34},1" DateTime="2021-10-05T05:47:30" Description="Initial version" Number="1">
+      <Format>
+        <ERTextFormat ID.="{F829356D-5A13-4AB3-8713-9414CAAF5D34}" Name="Altinn VAT web request headers format (NO)" Type="ERComponentFormatTypeAttributeJSON">
+          <EnumList>
+            <EREnumDefinitionList />
+          </EnumList>
+          <Root>
+            <ERTextFormatFileComponent ID.="{dd0394f8-42f4-47ab-9077-d5d3138260a5}">
+              <ExtensionParameters>
+                <ERFileExtensionParameters />
+              </ExtensionParameters>
+              <FormattingParameters>
+                <ERFormattingParameters />
+              </FormattingParameters>
+              <Contents.>
+                <ERTextFormatJSONObject ID.="{0b3e6a6a-7645-4b01-a374-5276c5f8f081}">
+                  <Contents.>
+                    <ERTextFormatJSONProperty ID.="{4bbf6f56-4ad3-4ee9-876d-af8bc9ef4774}" Name="Authorization">
+                      <Contents.>
+                        <ERTextFormatString ID.="{2145e2fb-5b8e-4f6f-8c87-a24b0c3581b7}" Transformation="{d2a7c93d-ff5d-4bcb-9df8-bb2f28841e96}" />
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                    <ERTextFormatJSONProperty ID.="{6a941a62-724b-454e-a7f9-7eb2b7abd7c7}" Name="Content-Disposition">
+                      <Contents.>
+                        <ERTextFormatString ID.="{1ecb9d58-b96a-487c-8b70-aecfd68f6d3c}" Transformation="{d2a7c93d-ff5d-4bcb-9df8-bb2f28841e96}" />
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                    <ERTextFormatJSONProperty ID.="{bd7ff6e5-4cfe-4f1e-a552-6898394b2e28}" Name="Content-Disposition">
+                      <Contents.>
+                        <ERTextFormatString ID.="{f7e536ff-fede-4281-acc5-6c67999cbc3a}" Transformation="{d2a7c93d-ff5d-4bcb-9df8-bb2f28841e96}" />
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                  </Contents.>
+                </ERTextFormatJSONObject>
+              </Contents.>
+            </ERTextFormatFileComponent>
+          </Root>
+          <TransformationRepository>
+            <ERNamedTransformationsRepository>
+              <Contents.>
+                <ERNamedTextTransformation ID.="{8b904dbe-c353-47df-a839-1aaa90b27878}" Name="AddQuotes">
+                  <Transformation>
+                    <ERExpressionTransformation ID.="{d2a7c93d-ff5d-4bcb-9df8-bb2f28841e96}" ExpressionAsString="CONCATENATE(CHAR(34), parameter, CHAR(34))" ParameterType="6" SyntaxVersion="1">
+                      <Expression>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringChar>
+                              <Input>
+                                <ERExpressionIntConstant Value="34" />
+                              </Input>
+                            </ERExpressionStringChar>
+                            <ERExpressionStringItemValue ItemPath="parameter" />
+                            <ERExpressionStringChar>
+                              <Input>
+                                <ERExpressionIntConstant Value="34" />
+                              </Input>
+                            </ERExpressionStringChar>
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </Expression>
+                    </ERExpressionTransformation>
+                  </Transformation>
+                </ERNamedTextTransformation>
+              </Contents.>
+            </ERNamedTransformationsRepository>
+          </TransformationRepository>
+        </ERTextFormat>
+      </Format>
+    </ERFormatVersion>
+    <ERFormatMappingVersion ID.="{61073926-648B-4EE9-A332-EF929D469725},5" DateTime="2021-11-18T14:16:15" Number="5">
+      <Mapping>
+        <ERFormatMapping ID.="{61073926-648B-4EE9-A332-EF929D469725}" Format="{F829356D-5A13-4AB3-8713-9414CAAF5D34}" FormatVersion="{F829356D-5A13-4AB3-8713-9414CAAF5D34},1" Name="Altinn VAT web request headers format (NO)">
+          <Binding>
+            <ERFormatBinding>
+              <Contents.>
+                <ERFormatComponentPropertyBinding Component="{2145e2fb-5b8e-4f6f-8c87-a24b0c3581b7}" ExpressionAsString="CONCATENATE(&quot;Bearer &quot;,  '$Token')" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConcatenate>
+                      <Contents.>
+                        <ERExpressionStringConstant Value="Bearer " />
+                        <ERExpressionStringItemValue ItemPath="$Token" />
+                      </Contents.>
+                    </ERExpressionStringConcatenate>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{1ecb9d58-b96a-487c-8b70-aecfd68f6d3c}" ExpressionAsString="&quot;attachment; filename=konvolutt.xml&quot;" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant Value="attachment; filename=konvolutt.xml" />
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{f7e536ff-fede-4281-acc5-6c67999cbc3a}" ExpressionAsString="&quot;attachment; filename=mvamelding.xml&quot;" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant Value="attachment; filename=mvamelding.xml" />
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{bd7ff6e5-4cfe-4f1e-a552-6898394b2e28}" ExpressionAsString="WebServiceId = &quot;NO Altinn POST XML&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="WebServiceId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO Altinn POST XML" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{6a941a62-724b-454e-a7f9-7eb2b7abd7c7}" ExpressionAsString="WebServiceId=&quot;NO Altinn PUT XML&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="WebServiceId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO Altinn PUT XML" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+              </Contents.>
+            </ERFormatBinding>
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+              <Contents.>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="model">
+                      <ValueSource>
+                        <ERModelDataSourceHandler DataContainerDescriptorName="WebService_VAT_NO" ModelGuid="{e5ebf897-98be-48a6-8931-e29c65da26ae}" RevisionNumber="40" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="WebServiceId">
+                      <ValueSource>
+                        <ERUserParameterDataSourceHandler ExtendedDataTypeName="EMWEBServiceId" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$Token">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="model.WebService.AccessToken" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringItemValue ItemPath="model/WebService/AccessToken" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+              </Contents.>
+            </ERModelDefinition>
+          </Datasource>
+        </ERFormatMapping>
+      </Mapping>
+    </ERFormatMappingVersion>
+  </Contents.>
+</ERSolutionVersion>

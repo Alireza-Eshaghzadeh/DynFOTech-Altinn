@@ -1,0 +1,1862 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ERSolutionVersion DateTime="2021-11-25T09:27:37" Description="KB4642184" Number="7" PublicVersionNumber="112.7" VersionStatus="2">
+  <Prerequisites>
+    <ERPrerequisites>
+      <Contents.>
+        <ERPrerequisiteGroup Name="Applicable product version" Type="1">
+          <Contents.>
+            <ERPrerequisiteComponent Id="Product: Microsoft Dynamics 365 for Finance and Operations (10.0.21)" Version="[10.0.960.128,10.0.961)" />
+            <ERPrerequisiteComponent Id="Product: Microsoft Dynamics 365 for Finance and Operations (10.0.22)" Version="[10.0.995.91,10.0.996)" />
+            <ERPrerequisiteComponent Id="Product: Microsoft Dynamics 365 for Finance and Operations (10.0.23)" Version="[10.0.1037.50,10.0.1038)" />
+            <ERPrerequisiteComponent Id="Product: Microsoft Dynamics 365 for Finance and Operations (10.0.24)" Version="10.0.1077.0" />
+          </Contents.>
+        </ERPrerequisiteGroup>
+      </Contents.>
+    </ERPrerequisites>
+  </Prerequisites>
+  <Solution>
+    <ERSolution ID.="{621AA4E2-76B1-4FEE-9E12-D18A4E83B7A0}" Base="{2C2504AD-0CD4-4E4E-BCE2-B74089D3822D},112" Name="Altinn VAT interoperation (NO)">
+      <Vendor>
+        <ERVendor Name="Microsoft" Url="http://microsoft.com" />
+      </Vendor>
+      <Contents.>
+        <Ref. ID.="{64675CAF-B4B8-43FD-BEE2-2807DFD7CCF1}" />
+        <Ref. ID.="{3109250B-D083-45CE-9B43-7792047F0C5D}" />
+      </Contents.>
+    </ERSolution>
+  </Solution>
+  <Contents.>
+    <ERFormatVersion ID.="{64675CAF-B4B8-43FD-BEE2-2807DFD7CCF1},3" DateTime="2021-10-26T06:07:50" Number="3">
+      <Format>
+        <ERTextFormat ID.="{64675CAF-B4B8-43FD-BEE2-2807DFD7CCF1}" Name="Altinn VAT interoperation (NO)" Type="ERComponentFormatTypeAttributeJSON">
+          <EnumList>
+            <EREnumDefinitionList />
+          </EnumList>
+          <Root>
+            <ERTextFormatFileComponent ID.="{f62e5534-e097-4e9b-a2b8-e1e221a81ace}">
+              <ExtensionParameters>
+                <ERFileExtensionParameters />
+              </ExtensionParameters>
+              <FormattingParameters>
+                <ERFormattingParameters />
+              </FormattingParameters>
+              <Contents.>
+                <ERTextFormatJSONObject ID.="{558e1a6b-e142-4c60-ba6f-cc0547c03690}" Name="CreateInstanceFormat">
+                  <Contents.>
+                    <ERTextFormatJSONProperty ID.="{0848ab9c-4773-4ad2-a6de-b5aa055cc64f}" Name="instanceOwner">
+                      <Contents.>
+                        <ERTextFormatJSONObject ID.="{1999b40a-94e0-4883-bcc9-8981c1537918}">
+                          <Contents.>
+                            <ERTextFormatJSONProperty ID.="{a4831410-1dc1-438c-bcf6-51676550d1de}" Name="organisationNumber" />
+                          </Contents.>
+                        </ERTextFormatJSONObject>
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                  </Contents.>
+                </ERTextFormatJSONObject>
+                <ERTextFormatString ID.="{040a6262-579f-4f52-b4e0-d9252b3acd22}" Name="UploadVATReturnSubmissionURLPath" />
+                <ERTextFormatString ID.="{e9f6c9fe-c09c-4cc9-b3f8-c6867a690003}" Name="UploadVATReturnURLPath" />
+                <ERTextFormatString ID.="{680325ad-e130-493f-b937-c82977b1d2c4}" Name="CompleteDataFillingURLPath" />
+                <ERTextFormatString ID.="{b5df9e08-10c1-49e1-9951-114fe7efdcab}" Name="CompleteVatReturnSubmissionURLPath" />
+                <ERTextFormatString ID.="{e6f5b839-b488-4765-af0f-892f49dfdc25}" Name="GetFeedbackStatusURLPath" />
+                <ERTextFormatString ID.="{a3cf713c-1800-4a76-a090-acdacc1695ff}" Name="GetFeedbackURLPath" />
+                <ERTextFormatString ID.="{973aab47-ac5d-405d-978c-d717a2b46235}" Name="PaymentInformationURL" />
+                <ERTextFormatString ID.="{8eb0269c-79f7-4e34-9764-96501ba73e4c}" Name="ReceiptURL" />
+                <ERTextFormatString ID.="{76d10be3-cb75-474d-ad51-a6ab7a47891d}" Name="ValidationResultURL" />
+              </Contents.>
+            </ERTextFormatFileComponent>
+          </Root>
+          <TransformationRepository>
+            <ERNamedTransformationsRepository />
+          </TransformationRepository>
+        </ERTextFormat>
+      </Format>
+    </ERFormatVersion>
+    <ERFormatMappingVersion ID.="{3109250B-D083-45CE-9B43-7792047F0C5D},5" DateTime="2021-11-17T14:55:25" Number="5">
+      <Mapping>
+        <ERFormatMapping ID.="{3109250B-D083-45CE-9B43-7792047F0C5D}" Format="{64675CAF-B4B8-43FD-BEE2-2807DFD7CCF1}" FormatVersion="{64675CAF-B4B8-43FD-BEE2-2807DFD7CCF1},3" Name="Altinn VAT interoperation (NO)">
+          <Binding>
+            <ERFormatBinding>
+              <Contents.>
+                <ERFormatComponentPropertyBinding Component="{e9f6c9fe-c09c-4cc9-b3f8-c6867a690003}" ExpressionAsString="IF(&#xA;    AND(&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')),&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'))),&#xA;&#xA;    CONCATENATE(&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID'.Value,&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'.Value,&#xA;        &quot;/data?dataType=mvamelding&quot;),&#xA;&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID/Value" />
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID/Value" />
+                            <ERExpressionStringConstant Value="/data?dataType=mvamelding" />
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{a3cf713c-1800-4a76-a090-acdacc1695ff}" ExpressionAsString="IF(&#xA;    AND(&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')),&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'))),&#xA;&#xA;    CONCATENATE(&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID'.Value,&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'.Value,&#xA;        &quot;/feedback&quot;),&#xA;&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID/Value" />
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID/Value" />
+                            <ERExpressionStringConstant Value="/feedback" />
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{e6f5b839-b488-4765-af0f-892f49dfdc25}" ExpressionAsString="IF(&#xA;    AND(&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')),&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'))),&#xA;&#xA;    CONCATENATE(&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID'.Value,&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'.Value,&#xA;        &quot;/feedback/status&quot;),&#xA;&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID/Value" />
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID/Value" />
+                            <ERExpressionStringConstant Value="/feedback/status" />
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{b5df9e08-10c1-49e1-9951-114fe7efdcab}" ExpressionAsString="IF(&#xA;    AND(&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')),&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'))),&#xA;&#xA;    CONCATENATE(&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID'.Value,&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'.Value,&#xA;        &quot;/process/next&quot;),&#xA;&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID/Value" />
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID/Value" />
+                            <ERExpressionStringConstant Value="/process/next" />
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{680325ad-e130-493f-b937-c82977b1d2c4}" ExpressionAsString="IF(&#xA;    AND(&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')),&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'))),&#xA;&#xA;    CONCATENATE(&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID'.Value,&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'.Value,&#xA;        &quot;/process/next&quot;),&#xA;&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID/Value" />
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID/Value" />
+                            <ERExpressionStringConstant Value="/process/next" />
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{040a6262-579f-4f52-b4e0-d9252b3acd22}" ExpressionAsString="ActionId=&quot;NO VAT Upload VAT return submission&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Upload VAT return submission" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{e9f6c9fe-c09c-4cc9-b3f8-c6867a690003}" ExpressionAsString="ActionId=&quot;NO VAT Upload VAT return&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Upload VAT return" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{680325ad-e130-493f-b937-c82977b1d2c4}" ExpressionAsString="ActionId=&quot;NO VAT Complete data filling&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Complete data filling" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{b5df9e08-10c1-49e1-9951-114fe7efdcab}" ExpressionAsString="ActionId=&quot;NO VAT Complete VAT return submission&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Complete VAT return submission" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{e6f5b839-b488-4765-af0f-892f49dfdc25}" ExpressionAsString="ActionId=&quot;NO VAT Send feedback status request&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Send feedback status request" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{a3cf713c-1800-4a76-a090-acdacc1695ff}" ExpressionAsString="ActionId=&quot;NO VAT Send feedback request&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Send feedback request" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{973aab47-ac5d-405d-978c-d717a2b46235}" ExpressionAsString="ActionId = &quot;NO VAT Download payment information&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Download payment information" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{76d10be3-cb75-474d-ad51-a6ab7a47891d}" ExpressionAsString="ActionId=&quot;NO VAT Download validation result&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Download validation result" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{8eb0269c-79f7-4e34-9764-96501ba73e4c}" ExpressionAsString="ActionId=&quot;NO VAT Download receipt&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Download receipt" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{558e1a6b-e142-4c60-ba6f-cc0547c03690}" ExpressionAsString="ActionId = &quot;NO VAT Generate request for instance&quot;" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringEquals>
+                      <FirstExpression>
+                        <ERExpressionStringItemValue ItemPath="ActionId" />
+                      </FirstExpression>
+                      <SecondExpression>
+                        <ERExpressionStringConstant Value="NO VAT Generate request for instance" />
+                      </SecondExpression>
+                    </ERExpressionStringEquals>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{973aab47-ac5d-405d-978c-d717a2b46235}" ExpressionAsString="IF(&#xA;    NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PaymentInformation')), &#xA;    model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PaymentInformation'.Value, &#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionNot>
+                          <Input>
+                            <ERExpressionListIsEmpty>
+                              <Input>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PaymentInformation" />
+                              </Input>
+                            </ERExpressionListIsEmpty>
+                          </Input>
+                        </ERExpressionNot>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PaymentInformation/Value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{8eb0269c-79f7-4e34-9764-96501ba73e4c}" ExpressionAsString="IF(&#xA;    NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_Receipt')), &#xA;    model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_Receipt'.Value,&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionNot>
+                          <Input>
+                            <ERExpressionListIsEmpty>
+                              <Input>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_Receipt" />
+                              </Input>
+                            </ERExpressionListIsEmpty>
+                          </Input>
+                        </ERExpressionNot>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_Receipt/Value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{76d10be3-cb75-474d-ad51-a6ab7a47891d}" ExpressionAsString="IF(&#xA;    NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_ValidationResult')), &#xA;    model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_ValidationResult'.Value,&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionNot>
+                          <Input>
+                            <ERExpressionListIsEmpty>
+                              <Input>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_ValidationResult" />
+                              </Input>
+                            </ERExpressionListIsEmpty>
+                          </Input>
+                        </ERExpressionNot>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_ValidationResult/Value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{f62e5534-e097-4e9b-a2b8-e1e221a81ace}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{af168b1e-4080-4b8e-a385-e026eef8cccf}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(OR(ActionId=&quot;NO VAT Generate request for instance&quot;, ActionId=&quot;NO VAT Upload VAT return submission&quot;, ActionId=&quot;NO VAT Upload VAT return&quot;, ActionId=&quot;NO VAT Complete data filling&quot;, ActionId=&quot;NO VAT Complete VAT return submission&quot;, ActionId=&quot;NO VAT Send feedback status request&quot;, ActionId=&quot;NO VAT Send feedback request&quot;, ActionId=&quot;NO VAT Download payment information&quot;, ActionId=&quot;NO VAT Download validation result&quot;, ActionId=&quot;NO VAT Download receipt&quot;), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionOr>
+                                      <Contents.>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Generate request for instance" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Upload VAT return submission" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Upload VAT return" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Complete data filling" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Complete VAT return submission" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Send feedback status request" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Send feedback request" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Download payment information" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Download validation result" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="ActionId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant Value="NO VAT Download receipt" />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionOr>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Unexpected action &quot;, CHAR(34), ActionId, CHAR(34))" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Unexpected action " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="ActionId" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{973aab47-ac5d-405d-978c-d717a2b46235}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{450226fd-e60e-458a-947e-3516eabfd1c2}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PaymentInformation')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PaymentInformation" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_PaymentInformation', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PaymentInformation" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{040a6262-579f-4f52-b4e0-d9252b3acd22}" ExpressionAsString="IF(&#xA;    AND(&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')),&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID')),&#xA;        NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_DataGUID'))),&#xA;&#xA;    CONCATENATE(&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID'.Value,&#xA;        &quot;/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID'.Value,&#xA;        &quot;/data/&quot;, model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_DataGUID'.Value),&#xA;&#xA;    &quot;&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_DataGUID" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID/Value" />
+                            <ERExpressionStringConstant Value="/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID/Value" />
+                            <ERExpressionStringConstant Value="/data/" />
+                            <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_DataGUID/Value" />
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{76d10be3-cb75-474d-ad51-a6ab7a47891d}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{fa7b8ab9-b979-4bbe-9b1f-0056da1a7415}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_ValidationResult')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_ValidationResult" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_ValidationResult', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_ValidationResult" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{8eb0269c-79f7-4e34-9764-96501ba73e4c}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{55a48916-05d3-4ec3-b66b-a11cbfc4a058}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_Receipt')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_Receipt" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_Receipt', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_Receipt" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{040a6262-579f-4f52-b4e0-d9252b3acd22}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{9ff9d0ec-8c02-49e8-afb4-fd20882d05af}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_PartyID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PartyID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{9628c260-0251-454f-8749-d94f7c39c01c}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_InstanceGUID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_InstanceGUID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{dacdbdc3-d021-4a78-b42e-7f4c116f7740}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_DataGUID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_DataGUID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_DataGUID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_DataGUID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{e9f6c9fe-c09c-4cc9-b3f8-c6867a690003}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{93a3865a-9c65-46a7-a34f-75c4ad9101e2}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_PartyID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PartyID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{95404e05-48af-4691-a714-555d4fe3defc}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_InstanceGUID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_InstanceGUID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{680325ad-e130-493f-b937-c82977b1d2c4}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{c4bb95ce-8390-45e6-aee8-6c3aef876b6c}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_PartyID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PartyID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{668d8ed1-e8ed-46a1-a549-b706aabc5af1}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_InstanceGUID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_InstanceGUID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{b5df9e08-10c1-49e1-9951-114fe7efdcab}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{89b9ac02-b975-40d7-bfee-83636d245627}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_PartyID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PartyID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{6c70f428-f2e2-41b7-b1e3-8b7ebb093b7f}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_InstanceGUID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_InstanceGUID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{e6f5b839-b488-4765-af0f-892f49dfdc25}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{ae500b39-1fc1-4332-ae12-2aa9c04dbf33}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_PartyID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PartyID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{297aa292-3136-44c2-a49a-bd11a60a5946}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_InstanceGUID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_InstanceGUID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{a3cf713c-1800-4a76-a090-acdacc1695ff}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{8355eec2-98ed-4a83-a507-78fd9fcf06ca}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_PartyID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_PartyID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_PartyID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PartyID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{3046049c-ae5c-4e5c-a708-498129ada711}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(NOT(ISEMPTY(model.ElectronicMessageHeader.'$ElectronicMessageAdditionalField_InstanceGUID')), true, false)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionNot>
+                                      <Input>
+                                        <ERExpressionListIsEmpty>
+                                          <Input>
+                                            <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/$ElectronicMessageAdditionalField_InstanceGUID" />
+                                          </Input>
+                                        </ERExpressionListIsEmpty>
+                                      </Input>
+                                    </ERExpressionNot>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="CONCATENATE(&quot;Electronic message additional field &quot;, CHAR(34), EMAdditionalFieldNames.'$FieldName_InstanceGUID', CHAR(34), &quot; is not found.&quot;)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="Electronic message additional field " />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_InstanceGUID" />
+                                    <ERExpressionStringChar>
+                                      <Input>
+                                        <ERExpressionIntConstant Value="34" />
+                                      </Input>
+                                    </ERExpressionStringChar>
+                                    <ERExpressionStringConstant Value=" is not found." />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{a4831410-1dc1-438c-bcf6-51676550d1de}" ExpressionAsString="model.CompanyInformation.'$OnlyDigitsRegistrationNumber'">
+                  <Expression>
+                    <ERExpressionStringItemValue ItemPath="model/CompanyInformation/$OnlyDigitsRegistrationNumber" />
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+              </Contents.>
+            </ERFormatBinding>
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+              <Contents.>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="model">
+                      <ValueSource>
+                        <ERModelDataSourceHandler DataContainerDescriptorName="TaxDeclarationModel" ModelGuid="{7cde3f27-29b9-41e5-9ca7-b82e7dab08b6}" RevisionNumber="103" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="ActionId">
+                      <ValueSource>
+                        <ERUserParameterDataSourceHandler ExtendedDataTypeName="EMActionId" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="model/ElectronicMessageHeader">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$ElectronicMessageAdditionalField_PaymentInformation">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="WHERE(model.ElectronicMessageHeader.ElectronicMessageAdditionalFields, model.ElectronicMessageHeader.ElectronicMessageAdditionalFields.Name=EMAdditionalFieldNames.'$FieldName_PaymentInformation')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionListWhere>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields/Name" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PaymentInformation" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <List>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields" />
+                              </List>
+                            </ERExpressionListWhere>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="model/ElectronicMessageHeader">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$ElectronicMessageAdditionalField_ValidationResult">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="WHERE(model.ElectronicMessageHeader.ElectronicMessageAdditionalFields, model.ElectronicMessageHeader.ElectronicMessageAdditionalFields.Name=EMAdditionalFieldNames.'$FieldName_ValidationResult')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionListWhere>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields/Name" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_ValidationResult" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <List>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields" />
+                              </List>
+                            </ERExpressionListWhere>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="model/ElectronicMessageHeader">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$ElectronicMessageAdditionalField_Receipt">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="WHERE(model.ElectronicMessageHeader.ElectronicMessageAdditionalFields, model.ElectronicMessageHeader.ElectronicMessageAdditionalFields.Name=EMAdditionalFieldNames.'$FieldName_Receipt')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionListWhere>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields/Name" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_Receipt" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <List>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields" />
+                              </List>
+                            </ERExpressionListWhere>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="model/ElectronicMessageHeader">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$ElectronicMessageAdditionalField_DataGUID">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="WHERE(model.ElectronicMessageHeader.ElectronicMessageAdditionalFields, model.ElectronicMessageHeader.ElectronicMessageAdditionalFields.Name=EMAdditionalFieldNames.'$FieldName_DataGUID')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionListWhere>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields/Name" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_DataGUID" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <List>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields" />
+                              </List>
+                            </ERExpressionListWhere>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="model/ElectronicMessageHeader">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$ElectronicMessageAdditionalField_PartyID">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="WHERE(model.ElectronicMessageHeader.ElectronicMessageAdditionalFields, model.ElectronicMessageHeader.ElectronicMessageAdditionalFields.Name=EMAdditionalFieldNames.'$FieldName_PartyID')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionListWhere>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields/Name" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_PartyID" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <List>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields" />
+                              </List>
+                            </ERExpressionListWhere>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="model/ElectronicMessageHeader">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$ElectronicMessageAdditionalField_InstanceGUID">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="WHERE(model.ElectronicMessageHeader.ElectronicMessageAdditionalFields, model.ElectronicMessageHeader.ElectronicMessageAdditionalFields.Name=EMAdditionalFieldNames.'$FieldName_InstanceGUID')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionListWhere>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields/Name" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="EMAdditionalFieldNames/$FieldName_InstanceGUID" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <List>
+                                <ERExpressionListItemValue ItemPath="model/ElectronicMessageHeader/ElectronicMessageAdditionalFields" />
+                              </List>
+                            </ERExpressionListWhere>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="EMAdditionalFieldNames">
+                      <ValueSource>
+                        <EREmptyContainerDataSourceHandler />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="EMAdditionalFieldNames">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$FieldName_DataGUID">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="&quot;NO VAT Data GUID&quot;" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringConstant Value="NO VAT Data GUID" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="EMAdditionalFieldNames">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$FieldName_InstanceGUID">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="&quot;NO VAT Instance GUID&quot;" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringConstant Value="NO VAT Instance GUID" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="EMAdditionalFieldNames">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$FieldName_PartyID">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="&quot;NO VAT Party ID&quot;" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringConstant Value="NO VAT Party ID" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="EMAdditionalFieldNames">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$FieldName_PaymentInformation">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="&quot;NO VAT Payment information&quot;" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringConstant Value="NO VAT Payment information" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="EMAdditionalFieldNames">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$FieldName_Receipt">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="&quot;NO VAT Receipt&quot;" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringConstant Value="NO VAT Receipt" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="EMAdditionalFieldNames">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$FieldName_ValidationResult">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="&quot;NO VAT Validation result&quot;" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringConstant Value="NO VAT Validation result" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="model/CompanyInformation">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$OnlyDigitsRegistrationNumber">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="REPLACE(model.CompanyInformation.RegistrationNumber, &quot;[^0-9]&quot;, &quot;&quot;, true)" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringReplace>
+                              <Input>
+                                <ERExpressionStringItemValue ItemPath="model/CompanyInformation/RegistrationNumber" />
+                              </Input>
+                              <IsRegexp>
+                                <ERExpressionBooleanConstant Value="1" />
+                              </IsRegexp>
+                              <Pattern>
+                                <ERExpressionStringConstant Value="[^0-9]" />
+                              </Pattern>
+                              <Replacement>
+                                <ERExpressionStringConstant />
+                              </Replacement>
+                            </ERExpressionStringReplace>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+              </Contents.>
+            </ERModelDefinition>
+          </Datasource>
+        </ERFormatMapping>
+      </Mapping>
+    </ERFormatMappingVersion>
+  </Contents.>
+</ERSolutionVersion>

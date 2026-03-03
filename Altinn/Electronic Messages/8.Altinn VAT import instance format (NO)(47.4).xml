@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ERSolutionVersion DateTime="2021-11-18T14:15:40" Description="KB4642184" Number="4" PublicVersionNumber="47.4" VersionStatus="2">
+  <Prerequisites>
+    <ERPrerequisites>
+      <Contents.>
+        <ERPrerequisiteGroup Name="Applicable product version" Type="1">
+          <Contents.>
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.21)" Version="[10.0.960.128,10.0.961)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.22)" Version="[10.0.995.91,10.0.996)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.23)" Version="[10.0.1037.50,10.0.1038)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.24)" Version="10.0.1077.0" />
+          </Contents.>
+        </ERPrerequisiteGroup>
+      </Contents.>
+    </ERPrerequisites>
+  </Prerequisites>
+  <Solution>
+    <ERSolution ID.="{0D0AE941-0422-4AAB-8088-20FF74284173}" Base="{F793C2A0-0A67-4B95-99B6-054D2FA0625D},47" Name="Altinn VAT import instance format (NO)">
+      <Vendor>
+        <ERVendor Name="Microsoft" Url="http://microsoft.com" />
+      </Vendor>
+      <Contents.>
+        <Ref. ID.="{82D554EF-187D-4721-B025-AD5BB7AFE40A}" />
+        <Ref. ID.="{4DDDD89F-588A-4B4F-8D63-2D39618C1C02}" />
+        <Ref. ID.="{18B68E35-AF89-48B3-940F-8EC1E4295D9C}" />
+      </Contents.>
+    </ERSolution>
+  </Solution>
+  <Contents.>
+    <ERModelMappingVersion ID.="{82D554EF-187D-4721-B025-AD5BB7AFE40A},3" DateTime="2021-11-18T14:15:40" Number="3">
+      <Mapping>
+        <ERModelMapping ID.="{82D554EF-187D-4721-B025-AD5BB7AFE40A}" DataContainerDescriptor="ResponseModel_VAT_NO" Model="{E5EBF897-98BE-48A6-8931-E29C65DA26AE}" ModelName="ElectronicMessageFrameworkModel" ModelVersion="{E5EBF897-98BE-48A6-8931-E29C65DA26AE},40" Name="Altinn VAT instance format to model mapping">
+          <Binding>
+            <ERDataContainerBinding>
+              <Contents.>
+                <ERDataContainerPathBinding ExpressionAsString="IF(AND(format.data.IsMatched, NOT(ISEMPTY(format.data.Data.'$SkatteetatenDatum'))),&#xA;    format.data.Data.'$SkatteetatenDatum'.id.value,&#xA;    &quot;&quot;)" Path="ResponseModel/AdditionalInfo/DataGUID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionBooleanItemValue ItemPath="format/data/IsMatched" />
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="format/data/Data/$SkatteetatenDatum" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="format/data/Data/$SkatteetatenDatum/id/value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="IF(AND(format.data.IsMatched, NOT(ISEMPTY(format.data.Data.'$SkatteetatenDatum'))),&#xA;    format.data.Data.'$SkatteetatenDatum'.instanceGuid.value,&#xA;    &quot;&quot;)" Path="ResponseModel/AdditionalInfo/InstanceGUID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionBooleanItemValue ItemPath="format/data/IsMatched" />
+                            <ERExpressionNot>
+                              <Input>
+                                <ERExpressionListIsEmpty>
+                                  <Input>
+                                    <ERExpressionListItemValue ItemPath="format/data/Data/$SkatteetatenDatum" />
+                                  </Input>
+                                </ERExpressionListIsEmpty>
+                              </Input>
+                            </ERExpressionNot>
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="format/data/Data/$SkatteetatenDatum/instanceGuid/value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="IF(format.instanceOwner.IsMatched, format.instanceOwner.Data.partyId.value, &quot;&quot;)" Path="ResponseModel/AdditionalInfo/PartyID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionBooleanItemValue ItemPath="format/instanceOwner/IsMatched" />
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="format/instanceOwner/Data/partyId/value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="IF(format.data.IsMatched, format.data.Data.datum, EMPTYLIST(&quot;&quot;))" Path="ResponseModel/MessageAdditionalFields" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionBooleanItemValue ItemPath="format/data/IsMatched" />
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionListEmpty>
+                          <Input>
+                            <ERExpressionStringConstant />
+                          </Input>
+                        </ERExpressionListEmpty>
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionListItemValue ItemPath="format/data/Data/datum" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="format.data.Data.datum.dataType.value" Path="ResponseModel/MessageAdditionalFields/AdditionalField/Name" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringItemValue ItemPath="format/data/Data/datum/dataType/value" />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="format.data.Data.datum.selfLinks.apps.value" Path="ResponseModel/MessageAdditionalFields/AdditionalField/Value" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringItemValue ItemPath="format/data/Data/datum/selfLinks/apps/value" />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="IF(AND(format.status.IsMatched,&#xA;            format.status.Data.substatus.IsMatched,&#xA;            format.status.Data.substatus.Data.label.IsMatched),&#xA;   format.status.Data.substatus.Data.label.Data.value,&#xA;   &quot;&quot;)" Path="ResponseModel/ResponseTypeStr" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionAnd>
+                          <Contents.>
+                            <ERExpressionBooleanItemValue ItemPath="format/status/IsMatched" />
+                            <ERExpressionBooleanItemValue ItemPath="format/status/Data/substatus/IsMatched" />
+                            <ERExpressionBooleanItemValue ItemPath="format/status/Data/substatus/Data/label/IsMatched" />
+                          </Contents.>
+                        </ERExpressionAnd>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="format/status/Data/substatus/Data/label/Data/value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="IF(format.title.IsMatched, format.title.Data.value, &quot;&quot;)" Path="ResponseModel/AdditionalInfo/ErrorDescription" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionBooleanItemValue ItemPath="format/title/IsMatched" />
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringItemValue ItemPath="format/title/Data/value" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/ErrorCode" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+              </Contents.>
+            </ERDataContainerBinding>
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+              <Contents.>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="format">
+                      <ValueSource>
+                        <ERImportFormatDatasource FormatGUID="{4dddd89f-588a-4b4f-8d63-2d39618c1c02}" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition ParentPath="format/data/Data">
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$SkatteetatenDatum">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="WHERE(format.data.Data.datum, format.data.Data.datum.dataType.value = &quot;no.skatteetaten.fastsetting.avgift.mva.mvameldinginnsending.v1.0&quot;)" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionListWhere>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="format/data/Data/datum/dataType/value" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant Value="no.skatteetaten.fastsetting.avgift.mva.mvameldinginnsending.v1.0" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <List>
+                                <ERExpressionListItemValue ItemPath="format/data/Data/datum" />
+                              </List>
+                            </ERExpressionListWhere>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+              </Contents.>
+            </ERModelDefinition>
+          </Datasource>
+          <Validations>
+            <ERDataContainerBinding />
+          </Validations>
+        </ERModelMapping>
+      </Mapping>
+    </ERModelMappingVersion>
+    <ERFormatVersion ID.="{4DDDD89F-588A-4B4F-8D63-2D39618C1C02},1" DateTime="2021-10-09T08:09:18" Description="Initial version" Number="1">
+      <Format>
+        <ERTextFormat ID.="{4DDDD89F-588A-4B4F-8D63-2D39618C1C02}" DataImportSupport="1" Name="Altinn VAT import instance format (NO)" Type="ERComponentFormatTypeAttributeJSON">
+          <EnumList>
+            <EREnumDefinitionList />
+          </EnumList>
+          <Root>
+            <ERTextFormatFileComponent ID.="{956dfea2-5dc2-4e33-af05-5914364672c8}">
+              <ExtensionParameters>
+                <ERFileExtensionParameters />
+              </ExtensionParameters>
+              <FormattingParameters>
+                <ERFormattingParameters />
+              </FormattingParameters>
+              <Contents.>
+                <ERTextFormatJSONObject ID.="{79474e28-9f5a-4a07-95d5-7f311c38fcb6}">
+                  <Contents.>
+                    <ERTextFormatJSONProperty ID.="{a9153352-2bf8-4fc0-aca7-76eb072b98fc}" Multiplicity="1" Name="id">
+                      <Contents.>
+                        <ERTextFormatString ID.="{0179c444-9ee8-4b28-8ed5-4eeaea8d58b0}" Name="value" />
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                    <ERTextFormatJSONProperty ID.="{ee7e811d-2d76-4f58-b098-c4c915e1b8ab}" Multiplicity="1" Name="instanceOwner">
+                      <Contents.>
+                        <ERTextFormatJSONObject ID.="{ebc1896e-f239-4d2c-8c3e-1cd49828bb22}">
+                          <Contents.>
+                            <ERTextFormatJSONProperty ID.="{d94666d8-3e0b-45c3-b5de-69a84977c104}" Name="partyId">
+                              <Contents.>
+                                <ERTextFormatString ID.="{2557f973-590d-4c26-8a7a-6559f8786ae1}" Name="value" />
+                              </Contents.>
+                            </ERTextFormatJSONProperty>
+                          </Contents.>
+                        </ERTextFormatJSONObject>
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                    <ERTextFormatJSONProperty ID.="{7f184e85-f806-4a4c-a038-a8149bd13215}" Multiplicity="1" Name="status">
+                      <Contents.>
+                        <ERTextFormatJSONObject ID.="{ecb4ad76-c69d-43cc-918e-b45612d1ed21}">
+                          <Contents.>
+                            <ERTextFormatJSONProperty ID.="{c0a53e1a-a5aa-40a8-ad06-503e39e5fac4}" Multiplicity="1" Name="substatus">
+                              <Contents.>
+                                <ERTextFormatJSONObject ID.="{96f63f18-7c79-478a-826b-db01a85886f8}">
+                                  <Contents.>
+                                    <ERTextFormatJSONProperty ID.="{9c30a4a7-395f-45f9-b314-1175de90f958}" Multiplicity="1" Name="label">
+                                      <Contents.>
+                                        <ERTextFormatString ID.="{8963bff2-f661-4a6b-ba93-fcd655798b54}" Name="value" />
+                                      </Contents.>
+                                    </ERTextFormatJSONProperty>
+                                  </Contents.>
+                                </ERTextFormatJSONObject>
+                              </Contents.>
+                            </ERTextFormatJSONProperty>
+                          </Contents.>
+                        </ERTextFormatJSONObject>
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                    <ERTextFormatJSONProperty ID.="{0fa85388-9a5d-43e7-9bc6-b7afc733b3b5}" Multiplicity="1" Name="data">
+                      <Contents.>
+                        <ERTextFormatJSONArray ID.="{27b82a7e-9230-46e4-b9ea-b55592dfde64}">
+                          <Contents.>
+                            <ERTextFormatJSONObject ID.="{6e5a6cf8-778a-461e-8953-d4dfb2676162}" Multiplicity="200" Name="datum">
+                              <Contents.>
+                                <ERTextFormatJSONProperty ID.="{13bf7f99-d6a7-477a-952a-3c497d38b62b}" Name="id">
+                                  <Contents.>
+                                    <ERTextFormatString ID.="{b84cea62-d43d-434d-8c6b-86b3479f743d}" Name="value" />
+                                  </Contents.>
+                                </ERTextFormatJSONProperty>
+                                <ERTextFormatJSONProperty ID.="{1a4f3f8c-8978-4274-ba2c-ba1576298a1a}" Name="instanceGuid">
+                                  <Contents.>
+                                    <ERTextFormatString ID.="{bf6f8bdb-363b-4232-b36e-92de99d8a951}" Name="value" />
+                                  </Contents.>
+                                </ERTextFormatJSONProperty>
+                                <ERTextFormatJSONProperty ID.="{fbf460a4-0232-4a72-a9e0-fb930de42e32}" Name="dataType">
+                                  <Contents.>
+                                    <ERTextFormatString ID.="{1e7b8275-6855-4e99-a326-31d3b6f8e88c}" Name="value" />
+                                  </Contents.>
+                                </ERTextFormatJSONProperty>
+                                <ERTextFormatJSONProperty ID.="{653b97a0-32ca-40aa-aa56-46a3e7a42194}" Name="selfLinks">
+                                  <Contents.>
+                                    <ERTextFormatJSONObject ID.="{123ebc4c-4fa2-43f5-8ba6-0a13d9ae8287}">
+                                      <Contents.>
+                                        <ERTextFormatJSONProperty ID.="{7c7d10b2-1b85-4c87-976d-e98201b58ae4}" Name="apps">
+                                          <Contents.>
+                                            <ERTextFormatString ID.="{1f512e68-4873-4475-b4dd-a635e4ba3de6}" Name="value" />
+                                          </Contents.>
+                                        </ERTextFormatJSONProperty>
+                                      </Contents.>
+                                    </ERTextFormatJSONObject>
+                                  </Contents.>
+                                </ERTextFormatJSONProperty>
+                              </Contents.>
+                            </ERTextFormatJSONObject>
+                          </Contents.>
+                        </ERTextFormatJSONArray>
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                    <ERTextFormatJSONProperty ID.="{f6355280-d48b-453c-a377-a083c330377d}" Multiplicity="1" Name="title">
+                      <Contents.>
+                        <ERTextFormatString ID.="{9f779b7d-db1e-4af3-b502-2b85d40181e3}" Name="value" />
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                  </Contents.>
+                </ERTextFormatJSONObject>
+              </Contents.>
+            </ERTextFormatFileComponent>
+          </Root>
+          <TransformationRepository>
+            <ERNamedTransformationsRepository />
+          </TransformationRepository>
+        </ERTextFormat>
+      </Format>
+    </ERFormatVersion>
+    <ERFormatMappingVersion ID.="{18B68E35-AF89-48B3-940F-8EC1E4295D9C},1" DateTime="2021-10-09T08:09:18" Description="Initial version" Number="1">
+      <Mapping>
+        <ERFormatMapping ID.="{18B68E35-AF89-48B3-940F-8EC1E4295D9C}" Format="{4DDDD89F-588A-4B4F-8D63-2D39618C1C02}" FormatVersion="{4DDDD89F-588A-4B4F-8D63-2D39618C1C02},1" Name="Altinn VAT import instance format (NO)">
+          <Binding>
+            <ERFormatBinding />
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+            </ERModelDefinition>
+          </Datasource>
+        </ERFormatMapping>
+      </Mapping>
+    </ERFormatMappingVersion>
+  </Contents.>
+</ERSolutionVersion>

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ERSolutionVersion DateTime="2021-11-18T14:15:24" Description="KB4642184" Number="4" PublicVersionNumber="47.4" VersionStatus="2">
+  <Prerequisites>
+    <ERPrerequisites>
+      <Contents.>
+        <ERPrerequisiteGroup Name="Applicable product version" Type="1">
+          <Contents.>
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.21)" Version="[10.0.960.128,10.0.961)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.22)" Version="[10.0.995.91,10.0.996)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.23)" Version="[10.0.1037.50,10.0.1038)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.24)" Version="10.0.1077.0" />
+          </Contents.>
+        </ERPrerequisiteGroup>
+      </Contents.>
+    </ERPrerequisites>
+  </Prerequisites>
+  <Solution>
+    <ERSolution ID.="{FDB42C2E-9C27-4AEC-A166-BABF3CF66140}" Base="{F793C2A0-0A67-4B95-99B6-054D2FA0625D},47" Name="Altinn VAT import feedback status format (NO)">
+      <Vendor>
+        <ERVendor Name="Microsoft" Url="http://microsoft.com" />
+      </Vendor>
+      <Contents.>
+        <Ref. ID.="{82E316E0-56ED-4D86-BC84-3E9B67344A0D}" />
+        <Ref. ID.="{869FA436-2C2B-40BF-9F16-4B7690787ACF}" />
+        <Ref. ID.="{1A6DC1CC-6FB0-4D6C-8693-63050AAE1FBE}" />
+      </Contents.>
+    </ERSolution>
+  </Solution>
+  <Contents.>
+    <ERModelMappingVersion ID.="{82E316E0-56ED-4D86-BC84-3E9B67344A0D},4" DateTime="2021-11-18T14:15:25" Number="4">
+      <Mapping>
+        <ERModelMapping ID.="{82E316E0-56ED-4D86-BC84-3E9B67344A0D}" DataContainerDescriptor="ResponseModel_VAT_NO" Model="{E5EBF897-98BE-48A6-8931-E29C65DA26AE}" ModelName="ElectronicMessageFrameworkModel" ModelVersion="{E5EBF897-98BE-48A6-8931-E29C65DA26AE},40" Name="Altinn VAT feedback status response format to model mapping">
+          <Binding>
+            <ERDataContainerBinding>
+              <Contents.>
+                <ERDataContainerPathBinding ExpressionAsString="EMPTYLIST(&quot;&quot;)" Path="ResponseModel/MessageAdditionalFields" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionListEmpty>
+                      <Input>
+                        <ERExpressionStringConstant />
+                      </Input>
+                    </ERExpressionListEmpty>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="IF(format.value = CONCATENATE(&quot;{&quot;, CHAR(34), &quot;isFeedbackProvided&quot;, CHAR(34), &quot;:true}&quot;),&#xA;&quot;NO VAT Feedback provided&quot;, &#xA;&quot;NO VAT Feedback not provided&quot;)" Path="ResponseModel/RegistrationStatus" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionGenericIf>
+                      <Condition>
+                        <ERExpressionStringEquals>
+                          <FirstExpression>
+                            <ERExpressionStringItemValue ItemPath="format/value" />
+                          </FirstExpression>
+                          <SecondExpression>
+                            <ERExpressionStringConcatenate>
+                              <Contents.>
+                                <ERExpressionStringConstant Value="{" />
+                                <ERExpressionStringChar>
+                                  <Input>
+                                    <ERExpressionIntConstant Value="34" />
+                                  </Input>
+                                </ERExpressionStringChar>
+                                <ERExpressionStringConstant Value="isFeedbackProvided" />
+                                <ERExpressionStringChar>
+                                  <Input>
+                                    <ERExpressionIntConstant Value="34" />
+                                  </Input>
+                                </ERExpressionStringChar>
+                                <ERExpressionStringConstant Value=":true}" />
+                              </Contents.>
+                            </ERExpressionStringConcatenate>
+                          </SecondExpression>
+                        </ERExpressionStringEquals>
+                      </Condition>
+                      <FalseValue>
+                        <ERExpressionStringConstant Value="NO VAT Feedback not provided" />
+                      </FalseValue>
+                      <TrueValue>
+                        <ERExpressionStringConstant Value="NO VAT Feedback provided" />
+                      </TrueValue>
+                    </ERExpressionGenericIf>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/DataGUID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/ErrorCode" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/ErrorDescription" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/InstanceGUID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/PartyID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+              </Contents.>
+            </ERDataContainerBinding>
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+              <Contents.>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="format">
+                      <ValueSource>
+                        <ERImportFormatDatasource FormatGUID="{869fa436-2c2b-40bf-9f16-4b7690787acf}" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+              </Contents.>
+            </ERModelDefinition>
+          </Datasource>
+          <Validations>
+            <ERDataContainerBinding />
+          </Validations>
+        </ERModelMapping>
+      </Mapping>
+    </ERModelMappingVersion>
+    <ERFormatVersion ID.="{869FA436-2C2B-40BF-9F16-4B7690787ACF},1" DateTime="2021-10-05T05:45:53" Description="Initial version" Number="1">
+      <Format>
+        <ERTextFormat ID.="{869FA436-2C2B-40BF-9F16-4B7690787ACF}" DataImportSupport="1" Name="Altinn VAT import feedback status format (NO)" Type="ERComponentFormatTypeAttributeText">
+          <EnumList>
+            <EREnumDefinitionList />
+          </EnumList>
+          <Root>
+            <ERTextFormatFileComponent ID.="{abe4013d-b4a7-43d1-b14f-148f2c288035}">
+              <ExtensionParameters>
+                <ERFileExtensionParameters />
+              </ExtensionParameters>
+              <FormattingParameters>
+                <ERFormattingParameters />
+              </FormattingParameters>
+              <Contents.>
+                <ERTextFormatString ID.="{fe953d10-0ad9-4850-861b-257a2a9fb07f}" Name="value" />
+              </Contents.>
+            </ERTextFormatFileComponent>
+          </Root>
+          <TransformationRepository>
+            <ERNamedTransformationsRepository />
+          </TransformationRepository>
+        </ERTextFormat>
+      </Format>
+    </ERFormatVersion>
+    <ERFormatMappingVersion ID.="{1A6DC1CC-6FB0-4D6C-8693-63050AAE1FBE},1" DateTime="2021-10-05T05:45:53" Description="Initial version" Number="1">
+      <Mapping>
+        <ERFormatMapping ID.="{1A6DC1CC-6FB0-4D6C-8693-63050AAE1FBE}" Format="{869FA436-2C2B-40BF-9F16-4B7690787ACF}" FormatVersion="{869FA436-2C2B-40BF-9F16-4B7690787ACF},1" Name="Altinn VAT import feedback status format (NO)">
+          <Binding>
+            <ERFormatBinding />
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+            </ERModelDefinition>
+          </Datasource>
+        </ERFormatMapping>
+      </Mapping>
+    </ERFormatMappingVersion>
+  </Contents.>
+</ERSolutionVersion>

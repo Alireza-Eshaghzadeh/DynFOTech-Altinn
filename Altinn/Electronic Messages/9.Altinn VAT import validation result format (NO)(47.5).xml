@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ERSolutionVersion DateTime="2021-11-18T14:15:48" Description="KB4642184" Number="5" PublicVersionNumber="47.5" VersionStatus="2">
+  <Prerequisites>
+    <ERPrerequisites>
+      <Contents.>
+        <ERPrerequisiteGroup Name="Applicable product version" Type="1">
+          <Contents.>
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.21)" Version="[10.0.960.128,10.0.961)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.22)" Version="[10.0.995.91,10.0.996)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.23)" Version="[10.0.1037.50,10.0.1038)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.24)" Version="10.0.1077.0" />
+          </Contents.>
+        </ERPrerequisiteGroup>
+      </Contents.>
+    </ERPrerequisites>
+  </Prerequisites>
+  <Solution>
+    <ERSolution ID.="{0CF0DC00-FC1B-4BFE-BF2E-10B160EFA3CB}" Base="{F793C2A0-0A67-4B95-99B6-054D2FA0625D},47" Name="Altinn VAT import validation result format (NO)">
+      <Vendor>
+        <ERVendor Name="Microsoft" Url="http://microsoft.com" />
+      </Vendor>
+      <Contents.>
+        <Ref. ID.="{F22E138E-CD4F-44AE-A2A5-7819DCD9C626}" />
+        <Ref. ID.="{749DC83E-8493-4052-917B-F0F537BFD380}" />
+        <Ref. ID.="{634B2AF7-1065-41A9-9C6D-976654788275}" />
+      </Contents.>
+    </ERSolution>
+  </Solution>
+  <Contents.>
+    <ERModelMappingVersion ID.="{F22E138E-CD4F-44AE-A2A5-7819DCD9C626},5" DateTime="2021-11-18T14:15:48" Number="5">
+      <Mapping>
+        <ERModelMapping ID.="{F22E138E-CD4F-44AE-A2A5-7819DCD9C626}" DataContainerDescriptor="ResponseModel_VAT_NO" Model="{E5EBF897-98BE-48A6-8931-E29C65DA26AE}" ModelName="ElectronicMessageFrameworkModel" ModelVersion="{E5EBF897-98BE-48A6-8931-E29C65DA26AE},40" Name="Altinn VAT validation result format to model mapping">
+          <Binding>
+            <ERDataContainerBinding>
+              <Contents.>
+                <ERDataContainerPathBinding ExpressionAsString="EMPTYLIST(&quot;&quot;)" Path="ResponseModel/MessageAdditionalFields" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionListEmpty>
+                      <Input>
+                        <ERExpressionStringConstant />
+                      </Input>
+                    </ERExpressionListEmpty>
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/DataGUID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/ErrorCode" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/ErrorDescription" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/InstanceGUID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="&quot;&quot;" Path="ResponseModel/AdditionalInfo/PartyID" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConstant />
+                  </Expression>
+                </ERDataContainerPathBinding>
+                <ERDataContainerPathBinding ExpressionAsString="format.valideringsresultat.avvikVedMeldingslevering.avvikVedMeldingsleveringValue" Path="ResponseModel/ResponseTypeStr" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringItemValue ItemPath="format/valideringsresultat/avvikVedMeldingslevering/avvikVedMeldingsleveringValue" />
+                  </Expression>
+                </ERDataContainerPathBinding>
+              </Contents.>
+            </ERDataContainerBinding>
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+              <Contents.>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="format">
+                      <ValueSource>
+                        <ERImportFormatDatasource FormatGUID="{749dc83e-8493-4052-917b-f0f537bfd380}" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+              </Contents.>
+            </ERModelDefinition>
+          </Datasource>
+          <Validations>
+            <ERDataContainerBinding />
+          </Validations>
+        </ERModelMapping>
+      </Mapping>
+    </ERModelMappingVersion>
+    <ERFormatVersion ID.="{749DC83E-8493-4052-917B-F0F537BFD380},1" DateTime="2021-10-05T05:46:53" Description="Initial version" Number="1">
+      <Format>
+        <ERTextFormat ID.="{749DC83E-8493-4052-917B-F0F537BFD380}" DataImportSupport="1" Name="Altinn VAT import validation result format (NO)" Type="ERComponentFormatTypeAttributeXML">
+          <EnumList>
+            <EREnumDefinitionList />
+          </EnumList>
+          <Root>
+            <ERTextFormatFileComponent ID.="{bbe99cbf-e589-4797-a413-575e51a07198}" Encoding="UTF-8">
+              <ExtensionParameters>
+                <ERFileExtensionParameters />
+              </ExtensionParameters>
+              <FormattingParameters>
+                <ERFormattingParameters />
+              </FormattingParameters>
+              <Contents.>
+                <ERTextFormatXMLElement ID.="{273a93db-ede4-4a82-b48c-3474aa982310}" Name="valideringsresultat">
+                  <Contents.>
+                    <ERTextFormatXMLAttribute ID.="{25a24869-3d96-4ba6-9cec-23f2a642d173}" Name="xmlns" Value="no:skatteetaten:fastsetting:avgift:mva:valideringsresultat:v1" />
+                    <ERTextFormatXMLElement ID.="{41d20e13-2486-401b-8aab-8bea1291da66}" Name="avvikVedMeldingslevering">
+                      <Contents.>
+                        <ERTextFormatString ID.="{f8e8be5b-807e-4fae-9f0c-0f3220d55088}" Name="avvikVedMeldingsleveringValue" />
+                      </Contents.>
+                    </ERTextFormatXMLElement>
+                    <ERTextFormatXMLElement ID.="{eb2b63ea-eea9-4c3b-9cd6-13e002fb15b8}" Multiplicity="10" Name="avvik">
+                      <Contents.>
+                        <ERTextFormatXMLElement ID.="{c07ec4e0-e6aa-4a50-8139-2544e4a5d6ee}" Name="stiTilAvvik">
+                          <Contents.>
+                            <ERTextFormatString ID.="{516bdbc2-8196-49e5-bf98-e3a5471f02e0}" />
+                          </Contents.>
+                        </ERTextFormatXMLElement>
+                        <ERTextFormatXMLElement ID.="{5f7905e2-2b7a-49a8-b2a6-0c9a1fff240e}" Name="mvaKode">
+                          <Contents.>
+                            <ERTextFormatString ID.="{7c2f3ef9-7582-4741-9d1e-6e50db5c2362}" />
+                          </Contents.>
+                        </ERTextFormatXMLElement>
+                        <ERTextFormatXMLElement ID.="{93fd242a-5157-4f2b-99fe-213e259b0b88}" Name="avviksinformasjon">
+                          <Contents.>
+                            <ERTextFormatXMLElement ID.="{96600f91-00bc-4536-9ecc-9f504ffc725f}" Name="begrunnelse">
+                              <Contents.>
+                                <ERTextFormatString ID.="{fca78a76-9b6e-44a8-8e3b-66c38880123e}" />
+                              </Contents.>
+                            </ERTextFormatXMLElement>
+                            <ERTextFormatXMLElement ID.="{fc1eee5a-e0bb-4118-8757-fdd31c48e9da}" Name="avvikstype">
+                              <Contents.>
+                                <ERTextFormatString ID.="{021e7a04-56b2-4168-98cf-ad615021b84f}" />
+                              </Contents.>
+                            </ERTextFormatXMLElement>
+                            <ERTextFormatXMLElement ID.="{ea0f702a-1b2d-44ee-a469-bd1ef0c8485c}" Name="avvikKode">
+                              <Contents.>
+                                <ERTextFormatString ID.="{a742734b-d7be-4646-b024-1db325c7da95}" />
+                              </Contents.>
+                            </ERTextFormatXMLElement>
+                            <ERTextFormatXMLElement ID.="{08d20e9e-3f02-48ed-9643-fc4b07c825a3}" Name="regelDefinisjon">
+                              <Contents.>
+                                <ERTextFormatString ID.="{24c36e01-9f33-42f3-a602-d13a47315921}" />
+                              </Contents.>
+                            </ERTextFormatXMLElement>
+                            <ERTextFormatXMLElement ID.="{e9f34285-3105-4361-a061-a2092c4a7283}" Name="detaljer">
+                              <Contents.>
+                                <ERTextFormatString ID.="{8287f872-c895-4036-a020-cba624f6cea6}" />
+                              </Contents.>
+                            </ERTextFormatXMLElement>
+                          </Contents.>
+                        </ERTextFormatXMLElement>
+                      </Contents.>
+                    </ERTextFormatXMLElement>
+                  </Contents.>
+                </ERTextFormatXMLElement>
+              </Contents.>
+            </ERTextFormatFileComponent>
+          </Root>
+          <TransformationRepository>
+            <ERNamedTransformationsRepository />
+          </TransformationRepository>
+        </ERTextFormat>
+      </Format>
+    </ERFormatVersion>
+    <ERFormatMappingVersion ID.="{634B2AF7-1065-41A9-9C6D-976654788275},1" DateTime="2021-10-05T05:46:54" Description="Initial version" Number="1">
+      <Mapping>
+        <ERFormatMapping ID.="{634B2AF7-1065-41A9-9C6D-976654788275}" Format="{749DC83E-8493-4052-917B-F0F537BFD380}" FormatVersion="{749DC83E-8493-4052-917B-F0F537BFD380},1" Name="Altinn VAT import validation result format (NO)">
+          <Binding>
+            <ERFormatBinding />
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+            </ERModelDefinition>
+          </Datasource>
+        </ERFormatMapping>
+      </Mapping>
+    </ERFormatMappingVersion>
+  </Contents.>
+</ERSolutionVersion>

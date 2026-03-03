@@ -1,0 +1,1274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ERSolutionVersion DateTime="2024-02-06T08:26:57" Description="ID854065" Number="10" PublicVersionNumber="51.10" VersionStatus="2">
+  <Prerequisites>
+    <ERPrerequisites>
+      <Contents.>
+        <ERPrerequisiteGroup Name="Applicable product version" Type="1">
+          <Contents.>
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 Finance (10.0.21)" Version="[10.0.960.128,10.0.961)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 Finance (10.0.22)" Version="[10.0.995.91,10.0.996)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.23)" Version="[10.0.1037.50,10.0.1038)" />
+            <ERPrerequisiteComponent Id="Microsoft Dynamics 365 for Finance and Operations (10.0.24)" Version="10.0.1077.0" />
+          </Contents.>
+        </ERPrerequisiteGroup>
+      </Contents.>
+    </ERPrerequisites>
+  </Prerequisites>
+  <Solution>
+    <ERSolution ID.="{9C726D56-CE7B-4DD1-9946-40791FD90C0F}" Base="{F793C2A0-0A67-4B95-99B6-054D2FA0625D},51" Name="Altinn VAT authorization format (NO)">
+      <Labels>
+        <ERClassList>
+          <Contents.>
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="لا يمكن أن يكون معرِّف ‏‫العميل فارغًا." LanguageId="ar" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="لا يمكن أن يكون معرِّف ‏‫العميل فارغًا." LanguageId="ar-AE" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="لا يمكن أن يكون معرِّف ‏‫العميل فارغًا." LanguageId="ar-BH" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="لا يمكن أن يكون معرِّف ‏‫العميل فارغًا." LanguageId="ar-EG" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="لا يمكن أن يكون معرِّف ‏‫العميل فارغًا." LanguageId="ar-KW" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="لا يمكن أن يكون معرِّف ‏‫العميل فارغًا." LanguageId="ar-OM" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="لا يمكن أن يكون معرِّف ‏‫العميل فارغًا." LanguageId="ar-QA" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="ID klienta nesmí být prázdné." LanguageId="cs" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Klient-id'et må ikke være tomt." LanguageId="da" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client-ID darf nicht leer sein." LanguageId="de" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client-ID darf nicht leer sein." LanguageId="de-AT" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client-ID darf nicht leer sein." LanguageId="de-CH" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-AU" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-CA" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-GB" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-IE" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-IN" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-MY" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-NZ" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-SG" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-us" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client ID cannot be empty." LanguageId="en-ZA" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="El id. de cliente no puede estar vacío." LanguageId="es" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="El id. de cliente no puede estar vacío." LanguageId="es-MX" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Kliendi ID väli ei tohi olla tühi." LanguageId="et" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Asiakastunnus ei voi olla tyhjä." LanguageId="fi" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="L’ID de client ne peut pas être vide." LanguageId="fr" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="L’ID de client ne peut pas être vide." LanguageId="fr-BE" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="L’ID de client ne peut pas être vide." LanguageId="fr-CA" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="L’ID de client ne peut pas être vide." LanguageId="fr-CH" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Az ügyfél-azonosító nem lehet üres." LanguageId="hu" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Biðlarakenni má ekki vanta." LanguageId="is" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="L'ID client non può essere vuoto." LanguageId="it" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="L'ID client non può essere vuoto." LanguageId="it-CH" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="クライアント ID は空白にできません。" LanguageId="ja" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Reikia nurodyti kliento ID." LanguageId="lt" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Klienta ID nevar būt tukšs." LanguageId="lv" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Klient-ID kan ikke være tom." LanguageId="nb-NO" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client-id mag niet leeg zijn." LanguageId="nl" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Client-id mag niet leeg zijn." LanguageId="nl-BE" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Identyfikator klienta nie może być pusty." LanguageId="pl" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="A ID do cliente não pode estar vazia." LanguageId="pt-BR" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="ИД клиента не может быть пустым." LanguageId="ru" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="Klient-ID får inte vara tomt." LanguageId="sv" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="รหัสไคลเอนต์ต้องไม่ว่างเปล่า" LanguageId="th" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="İstemci kimliği boş olamaz." LanguageId="tr" />
+            <ERLabel LabelId="CliendIdCannotBeEmpty" LabelValue="客户端 ID 不能为空。" LanguageId="zh-Hans" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫سر العميل‬ فارغًا." LanguageId="ar" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫سر العميل‬ فارغًا." LanguageId="ar-AE" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫سر العميل‬ فارغًا." LanguageId="ar-BH" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫سر العميل‬ فارغًا." LanguageId="ar-EG" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫سر العميل‬ فارغًا." LanguageId="ar-KW" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫سر العميل‬ فارغًا." LanguageId="ar-OM" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫سر العميل‬ فارغًا." LanguageId="ar-QA" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Tajný kód klienta nesmí být prázdné." LanguageId="cs" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Klienthemmeligheden må ikke være tom." LanguageId="da" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Clientgeheimnis darf nicht leer sein." LanguageId="de" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Clientgeheimnis darf nicht leer sein." LanguageId="de-AT" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Clientgeheimnis darf nicht leer sein." LanguageId="de-CH" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-AU" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-CA" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-GB" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-IE" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-IN" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-MY" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-NZ" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-SG" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-us" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Client secret cannot be empty." LanguageId="en-ZA" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="El secreto de cliente no puede estar vacío." LanguageId="es" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="El secreto de cliente no puede estar vacío." LanguageId="es-MX" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Kliendisaladuse väli ei tohi olla tühi." LanguageId="et" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Asiakkaan salauskoodi ei voi olla tyhjä." LanguageId="fi" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="La clé secrète de client ne peut pas être vide." LanguageId="fr" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="La clé secrète de client ne peut pas être vide." LanguageId="fr-BE" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="La clé secrète de client ne peut pas être vide." LanguageId="fr-CA" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="La clé secrète de client ne peut pas être vide." LanguageId="fr-CH" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="A titkos ügyfélkód nem lehet üres." LanguageId="hu" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Leyniorð biðlara má ekki vanta." LanguageId="is" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Il segreto client non può essere vuoto." LanguageId="it" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Il segreto client non può essere vuoto." LanguageId="it-CH" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="クライアント シークレットは空白にできません。" LanguageId="ja" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Reikia nurodyti kliento paslaptį." LanguageId="lt" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Klienta noslēpums nevar būt tukšs." LanguageId="lv" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Klienthemmelighet kan ikke være tom." LanguageId="nb-NO" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Clientgeheim mag niet leeg zijn." LanguageId="nl" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Clientgeheim mag niet leeg zijn." LanguageId="nl-BE" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Wpis tajny klienta nie może być pusty." LanguageId="pl" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="O segredo do cliente não pode estar vazio." LanguageId="pt-BR" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Секрет клиента не может быть пустым." LanguageId="ru" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="Klienthemlighet får inte vara tomt." LanguageId="sv" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="ข้อมูลลับของไคลเอนต์ต้องไม่ว่างเปล่า" LanguageId="th" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="İstemci gizli anahtarı boş olamaz." LanguageId="tr" />
+            <ERLabel LabelId="ClientSecretCannotBeEmpty" LabelValue="客户端密码不能为空。" LanguageId="zh-Hans" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫عنوان URL لإعادة التوجيه فارغًا." LanguageId="ar" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫عنوان URL لإعادة التوجيه فارغًا." LanguageId="ar-AE" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫عنوان URL لإعادة التوجيه فارغًا." LanguageId="ar-BH" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫عنوان URL لإعادة التوجيه فارغًا." LanguageId="ar-EG" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫عنوان URL لإعادة التوجيه فارغًا." LanguageId="ar-KW" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫عنوان URL لإعادة التوجيه فارغًا." LanguageId="ar-OM" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="لا يمكن أن يكون ‏‫عنوان URL لإعادة التوجيه فارغًا." LanguageId="ar-QA" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Adresa URL pro přesměrování nesmí být prázdná." LanguageId="cs" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="URL-adressen til omdirigering må ikke være tom." LanguageId="da" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Umleitungs-URL darf nicht leer sein." LanguageId="de" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Umleitungs-URL darf nicht leer sein." LanguageId="de-AT" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Umleitungs-URL darf nicht leer sein." LanguageId="de-CH" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-AU" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-CA" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-GB" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-IE" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-IN" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-MY" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-NZ" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-SG" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-us" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Redirect URL cannot be empty." LanguageId="en-ZA" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="La URL de redireccionamiento no puede estar vacía." LanguageId="es" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="La URL de redireccionamiento no puede estar vacía." LanguageId="es-MX" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Ümbersuunamis-URL-i väli ei tohi olla tühi." LanguageId="et" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Uudelleenohjauksen URL ei voi olla tyhjä." LanguageId="fi" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="L’URL de redirection ne peut pas être vide." LanguageId="fr" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="L’URL de redirection ne peut pas être vide." LanguageId="fr-BE" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="L’URL de redirection ne peut pas être vide." LanguageId="fr-CA" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="L’URL de redirection ne peut pas être vide." LanguageId="fr-CH" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Az átirányítási URL-cím nem lehet üres." LanguageId="hu" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Framsendingarvefslóð má ekki vanta." LanguageId="is" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="L'URL di reindirizzamento non può essere vuoto." LanguageId="it" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="L'URL di reindirizzamento non può essere vuoto." LanguageId="it-CH" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="リダイレクト URL は空白にできません。" LanguageId="ja" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Reikia nurodyti peradresavimo URL." LanguageId="lt" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Novirzīšanas URL nevar būt tukšs." LanguageId="lv" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Nettadressen for omadressering kan ikke være tom." LanguageId="nb-NO" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Omleidings-URL mag niet leeg zijn." LanguageId="nl" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Omleidings-URL mag niet leeg zijn." LanguageId="nl-BE" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Adres URL przekierowania nie może być pusty." LanguageId="pl" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="A URL de redirecionamento não pode estar vazia." LanguageId="pt-BR" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="URL-адрес перенаправления не может быть пустым." LanguageId="ru" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Omdirigerings-URL får inte vara tomt." LanguageId="sv" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="URL การเปลี่ยนเส้นทางต้องไม่ว่างเปล่า" LanguageId="th" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="Yeniden yönlendirme URL'si boş olamaz." LanguageId="tr" />
+            <ERLabel LabelId="RedirectUrlCannotBeEmpty" LabelValue="重定向 URL 不能为空。" LanguageId="zh-Hans" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="لا يمكن أن يكون الرمز المميز‬ للتحديث فارغًا." LanguageId="ar" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="لا يمكن أن يكون الرمز المميز‬ للتحديث فارغًا." LanguageId="ar-AE" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="لا يمكن أن يكون الرمز المميز‬ للتحديث فارغًا." LanguageId="ar-BH" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="لا يمكن أن يكون الرمز المميز‬ للتحديث فارغًا." LanguageId="ar-EG" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="لا يمكن أن يكون الرمز المميز‬ للتحديث فارغًا." LanguageId="ar-KW" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="لا يمكن أن يكون الرمز المميز‬ للتحديث فارغًا." LanguageId="ar-OM" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="لا يمكن أن يكون الرمز المميز‬ للتحديث فارغًا." LanguageId="ar-QA" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Obnovovací token nemůže být prázdný." LanguageId="cs" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Opdateringstoken må ikke være tomt." LanguageId="da" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Aktualisierungstoken darf nicht leer sein." LanguageId="de" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Aktualisierungstoken darf nicht leer sein." LanguageId="de-AT" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Aktualisierungstoken darf nicht leer sein." LanguageId="de-CH" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-AU" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-CA" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-GB" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-IE" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-IN" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-MY" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-NZ" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-SG" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-us" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Refresh token cannot be empty." LanguageId="en-ZA" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="El token de actualización no puede estar vacío." LanguageId="es" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="El token de actualización no puede estar vacío." LanguageId="es-MX" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Värskendusloa väli ei tohi olla tühi." LanguageId="et" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Päivitä tunnus ei voi olla tyhjä." LanguageId="fi" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Le jeton d’actualisation ne peut pas être vide." LanguageId="fr" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Le jeton d’actualisation ne peut pas être vide." LanguageId="fr-BE" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Le jeton d’actualisation ne peut pas être vide." LanguageId="fr-CA" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Le jeton d’actualisation ne peut pas être vide." LanguageId="fr-CH" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="A frissítési jogkivonat nem lehet üres." LanguageId="hu" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Uppfærslumerki má ekki vanta." LanguageId="is" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Il token di aggiornamento non può essere vuoto." LanguageId="it" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Il token di aggiornamento non può essere vuoto." LanguageId="it-CH" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="更新トークンは空白にできません。" LanguageId="ja" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Reikia nurodyti atnaujinimo atpažinimo ženklą." LanguageId="lt" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Atsvaidzināšanas marķieris nedrīkst būt tukšs." LanguageId="lv" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Oppdateringstoken kan ikke være tomt." LanguageId="nb-NO" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Vernieuwingstoken mag niet leeg zijn." LanguageId="nl" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Vernieuwingstoken mag niet leeg zijn." LanguageId="nl-BE" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Token odświeżania nie może być pusty." LanguageId="pl" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="O token de atualização não pode estar vazio." LanguageId="pt-BR" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Маркер обновления не может быть пустым." LanguageId="ru" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Uppdateringstoken får inte vara tomt." LanguageId="sv" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="โทเค็นการรีเฟรชต้องไม่ว่างเปล่า" LanguageId="th" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="Yenileme belirteci boş olamaz." LanguageId="tr" />
+            <ERLabel LabelId="RefreshTokenCannotBeEmpty" LabelValue="刷新令牌不能为空。" LanguageId="zh-Hans" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="اللغة المطلوبة في واجهة المستخدم" LanguageId="ar" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="اللغة المطلوبة في واجهة المستخدم" LanguageId="ar-AE" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="اللغة المطلوبة في واجهة المستخدم" LanguageId="ar-BH" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="اللغة المطلوبة في واجهة المستخدم" LanguageId="ar-EG" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="اللغة المطلوبة في واجهة المستخدم" LanguageId="ar-KW" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="اللغة المطلوبة في واجهة المستخدم" LanguageId="ar-OM" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="اللغة المطلوبة في واجهة المستخدم" LanguageId="ar-QA" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Požadovaný jazyk v uživatelském rozhraní" LanguageId="cs" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Ønsket sprog i brugergrænsefladen" LanguageId="da" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Angeforderte Sprache in der Benutzeroberfläche" LanguageId="de" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Angeforderte Sprache in der Benutzeroberfläche" LanguageId="de-AT" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Angeforderte Sprache in der Benutzeroberfläche" LanguageId="de-CH" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-AU" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-CA" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-GB" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-IE" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-IN" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-MY" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-NZ" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-SG" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-us" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Requested language in the user interface" LanguageId="en-ZA" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Idioma solicitado en la interfaz de usuario" LanguageId="es" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Idioma solicitado en la interfaz de usuario" LanguageId="es-MX" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Soovitud keel kasutajaliideses" LanguageId="et" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Pyydetty kieli käyttöliittymässä" LanguageId="fi" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Langue demandée dans l’interface utilisateur" LanguageId="fr" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Langue demandée dans l’interface utilisateur" LanguageId="fr-BE" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Langue demandée dans l’interface utilisateur" LanguageId="fr-CA" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Langue demandée dans l’interface utilisateur" LanguageId="fr-CH" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Felhasználói felület kért nyelve" LanguageId="hu" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Umbeðið tungumál í notandaviðmótinu" LanguageId="is" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Lingua richiesta nell'interfaccia utente" LanguageId="it" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Lingua richiesta nell'interfaccia utente" LanguageId="it-CH" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="ユーザー インターフェイスの要求言語" LanguageId="ja" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Pageidaujama kalba vartotojo sąsajoje" LanguageId="lt" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Pieprasītā valoda lietotāja interfeisā" LanguageId="lv" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Forespurt språk i brukergrensesnittet" LanguageId="nb-NO" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Gewenste taal in de gebruikersinterface" LanguageId="nl" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Gewenste taal in de gebruikersinterface" LanguageId="nl-BE" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Żądany język w interfejsie użytkownika" LanguageId="pl" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Idioma solicitado na interface do usuário" LanguageId="pt-BR" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Запрошенный язык в пользовательском интерфейсе" LanguageId="ru" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Begärt språk i användargränssnittet" LanguageId="sv" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="ภาษาที่ร้องขอในอินเทอร์เฟซผู้ใช้" LanguageId="th" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="Kullanıcı arabiriminde istenen dil" LanguageId="tr" />
+            <ERLabel LabelId="RequestedLanguage" LabelValue="用户界面中请求的语言" LanguageId="zh-Hans" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="تم إلغاء موافقة مسؤول النظام. يجب أن يوافق مسؤول النظام على إرسال المعلومات خارج Dynamics 365 Finance عن طريق الزر &quot;‏‫الحصول على كود التفويض‬&quot; في صفحة &quot;‏‫تطبيقات الويب‬&quot;." LanguageId="ar" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="تم إلغاء موافقة مسؤول النظام. يجب أن يوافق مسؤول النظام على إرسال المعلومات خارج Dynamics 365 Finance عن طريق الزر &quot;‏‫الحصول على كود التفويض‬&quot; في صفحة &quot;‏‫تطبيقات الويب‬&quot;." LanguageId="ar-AE" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="تم إلغاء موافقة مسؤول النظام. يجب أن يوافق مسؤول النظام على إرسال المعلومات خارج Dynamics 365 Finance عن طريق الزر &quot;‏‫الحصول على كود التفويض‬&quot; في صفحة &quot;‏‫تطبيقات الويب‬&quot;." LanguageId="ar-BH" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="تم إلغاء موافقة مسؤول النظام. يجب أن يوافق مسؤول النظام على إرسال المعلومات خارج Dynamics 365 Finance عن طريق الزر &quot;‏‫الحصول على كود التفويض‬&quot; في صفحة &quot;‏‫تطبيقات الويب‬&quot;." LanguageId="ar-EG" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="تم إلغاء موافقة مسؤول النظام. يجب أن يوافق مسؤول النظام على إرسال المعلومات خارج Dynamics 365 Finance عن طريق الزر &quot;‏‫الحصول على كود التفويض‬&quot; في صفحة &quot;‏‫تطبيقات الويب‬&quot;." LanguageId="ar-KW" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="تم إلغاء موافقة مسؤول النظام. يجب أن يوافق مسؤول النظام على إرسال المعلومات خارج Dynamics 365 Finance عن طريق الزر &quot;‏‫الحصول على كود التفويض‬&quot; في صفحة &quot;‏‫تطبيقات الويب‬&quot;." LanguageId="ar-OM" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="تم إلغاء موافقة مسؤول النظام. يجب أن يوافق مسؤول النظام على إرسال المعلومات خارج Dynamics 365 Finance عن طريق الزر &quot;‏‫الحصول على كود التفويض‬&quot; في صفحة &quot;‏‫تطبيقات الويب‬&quot;." LanguageId="ar-QA" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Souhlas správce systému byl zrušen. Správce systému musí souhlasit s přenosem informací mimo Dynamics 365 Finance pomocí tlačítka „Získat autorizační kód“ na stránce „Webové aplikace“." LanguageId="cs" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Systemadministratorsamtykke blev annulleret. Systemadministratoren skal give samtykke til at overføre oplysninger uden for Dynamics 365 Finance via knappen 'Hent godkendelseskode' på siden 'Webprogrammer'." LanguageId="da" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Die Zustimmung des Systemadministrators wurde widerrufen. Der Systemadministrator muss der Übermittlung von Informationen außerhalb von Dynamics 365 Finance über die Schaltfläche „Autorisierungscode abrufen“ auf der Seite „Webanwendungen“ zustimmen." LanguageId="de" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Die Zustimmung des Systemadministrators wurde widerrufen. Der Systemadministrator muss der Übermittlung von Informationen außerhalb von Dynamics 365 Finance über die Schaltfläche „Autorisierungscode abrufen“ auf der Seite „Webanwendungen“ zustimmen." LanguageId="de-AT" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Die Zustimmung des Systemadministrators wurde widerrufen. Der Systemadministrator muss der Übermittlung von Informationen ausserhalb von Dynamics 365 Finance über die Schaltfläche „Autorisierungscode abrufen“ auf der Seite „Webanwendungen“ zustimmen." LanguageId="de-CH" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-AU" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorization code' button on the 'Web applications' page." LanguageId="en-CA" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-GB" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-IE" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-IN" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-MY" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-NZ" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-SG" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was canceled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorization code' button on the 'Web applications' page." LanguageId="en-us" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="System administrator consent was cancelled. System administrator must consent to transmit information outside of Dynamics 365 Finance via 'Get authorisation code' button on the 'Web applications' page." LanguageId="en-ZA" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Se canceló el consentimiento del administrador del sistema. El administrador del sistema debe dar su consentimiento para transmitir información fuera de Dynamics 365 Finance mediante el botón &quot;Obtener código de autorización&quot; en la página &quot;Aplicaciones web&quot;." LanguageId="es" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Se canceló el consentimiento del administrador del sistema. El administrador del sistema debe dar su consentimiento para transmitir información fuera de Dynamics 365 Finance mediante el botón &quot;Obtener código de autorización&quot; en la página &quot;Aplicaciones web&quot;." LanguageId="es-MX" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Süsteemiadministraatori nõusolek on tühistatud. Süsteemiadministraator peab andma nõusoleku teabe edastamiseks väljapoole Dynamics 365 Finance'i lehe „Veebirakendused” nupuga „Hangi autoriseerimiskood”." LanguageId="et" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Järjestelmänvalvojan suostumus peruutettiin. Järjestelmänvalvojan on suostuttava tietojen lähettämiseen Dynamics 365 Financen ulkopuolelle käyttämällä Verkkosovellukset-sivun Hae varmennuskoodi -painiketta." LanguageId="fi" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Le consentement de l’administrateur système a été annulé. L’administrateur système doit accepter de transmettre des informations en dehors de Dynamics 365 Finance via le bouton « Obtenir un code d’autorisation » sur la page « Applications Web »." LanguageId="fr" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Le consentement de l’administrateur système a été annulé. L’administrateur système doit accepter de transmettre des informations en dehors de Dynamics 365 Finance via le bouton « Obtenir un code d’autorisation » sur la page « Applications Web »." LanguageId="fr-BE" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Le consentement de l’administrateur système a été annulé. L’administrateur système doit accepter de transmettre des informations en dehors de Dynamics 365 Finance via le bouton « Obtenir un code d’autorisation » sur la page « Applications Web »." LanguageId="fr-CA" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Le consentement de l’administrateur système a été annulé. L’administrateur système doit accepter de transmettre des informations en dehors de Dynamics 365 Finance via le bouton « Obtenir un code d’autorisation » sur la page « Applications Web »." LanguageId="fr-CH" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="A rendszergazdai hozzájárulást visszavonták. A rendszergazdának hozzá kell járulnia, hogy adatokat továbbítsanak a Dynamics 365 Finance rendszeren kívülre: ehhez a 'Webalkalmazások' oldal 'Engedélyezési kód lekérése' gombjára kell kattintani." LanguageId="hu" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Hætt var við samþykki kerfisstjóra. Kerfisstjóri verður að samþykkja að senda upplýsingar með öðrum hætti en Dynamics 365 Finance í gegnum hnappinn „Sækja heimildarkóða“ á síðunni „Vefforrit“." LanguageId="is" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Il consenso dell'amministratore di sistema è stato annullato. L'amministratore di sistema deve acconsente a trasmettere le informazioni all'esterno di Dynamics 365 Finance tramite il pulsante &quot;Ottieni codice autorizzazione&quot; della pagina &quot;Applicazioni Web&quot;." LanguageId="it" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Il consenso dell'amministratore di sistema è stato annullato. L'amministratore di sistema deve acconsente a trasmettere le informazioni all'esterno di Dynamics 365 Finance tramite il pulsante &quot;Ottieni codice autorizzazione&quot; della pagina &quot;Applicazioni Web&quot;." LanguageId="it-CH" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="システム管理者の同意がキャンセルされました。Dynamics 365 Finance の外部に情報を送信することを、'Web アプリケーション' ページの '認証コードの取得' ボタンによってシステム管理者が同意する必要があります。" LanguageId="ja" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Sistemos administratoriaus sutikimas buvo atšauktas. Sistemos administratorius turi sutikti, kad informacija būtų perduodama už „Dynamics 365 Finance“ ribų, spustelėdamas mygtuką „Gauti autorizavimo kodą“, esantį puslapyje „Žiniatinklio programos“." LanguageId="lt" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Sistēmas administratora piekrišana tika atcelta. Sistēmas administratoram ir jāpiekrīt informācijas pārsūtīšanai ārpus Dynamics 365 Finance, lapā Tīmekļa lietojumprogrammas izmantojot pogu Saņemt autorizācijas kodu." LanguageId="lv" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Samtykke fra systemansvarlig ble avbrutt. Systemadministratoren må samtykke i overføring av informasjon utenfor Dynamics 365 Finance via knappen Hent autorisasjonskode på siden Nettsøknader." LanguageId="nb-NO" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Toestemming van de systeembeheerder is geannuleerd. De systeembeheerder moet toestemming geven om informatie naar buiten Dynamics 365 Finance te verzenden met de knop Autorisatiecode verkrijgen op de pagina Webtoepassingen." LanguageId="nl" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Toestemming van de systeembeheerder is geannuleerd. De systeembeheerder moet toestemming geven om informatie naar buiten Dynamics 365 Finance te verzenden met de knop Autorisatiecode verkrijgen op de pagina Webtoepassingen." LanguageId="nl-BE" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Zgoda administratora systemu została anulowana. Administrator systemu musi wyrażać zgodę na przesyłanie informacji poza rozwiązanie Dynamics 365 Finance za pomocą przycisku „Pobierz kod autoryzacji” na stronie „Aplikacje sieci Web”." LanguageId="pl" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="O consentimento do administrador do sistema foi cancelado. O administrador do sistema deve consentir em transmitir informações fora do Dynamics 365 Finance usando o botão &quot;Obter código da autorização&quot; na página &quot;Aplicativos Web&quot;." LanguageId="pt-BR" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Согласие системного администратора отменено. Системный администратор должен дать решение на передачу информации за пределы Dynamics 365 Finance, нажав кнопку &quot;Получить код авторизации&quot; на странице &quot;Веб-приложения&quot;." LanguageId="ru" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Systemadministratörens medgivande annullerades. Systemadministratören måste samtycka till att överföra information utanför Dynamics 365 Finance via knappen &quot;Hämta auktoriseringskod&quot; på sidan &quot;Webbprogram&quot;." LanguageId="sv" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="ความยินยอมของผู้ดูแลระบบถูกยกเลิก ผู้ดูแลระบบต้องยินยอมให้ส่งข้อมูลภายนอก Dynamics 365 Finance ผ่านปุ่ม 'รับรหัสการให้สิทธิ์' ในหน้า 'แอปพลิเคชันบนเว็บ'" LanguageId="th" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="Sistem yöneticisi onayı iptal edildi. Sistem yöneticisinin, &quot;Web uygulamaları&quot; sayfasındaki &quot;Yetkilendirme kodu al&quot; düğmesi aracılığıyla Dynamics 365 Finance dışına bilgi aktarmak için onay vermesi gerekiyor." LanguageId="tr" />
+            <ERLabel LabelId="SystemAdministratorConsentWasCanceled" LabelValue="系统管理员同意已取消。系统管理员必须同意通过“Web 应用程序”页面上的“获取授权代码”按钮来将信息传输到 Dynamics 365 Finance 外部。" LanguageId="zh-Hans" />
+          </Contents.>
+        </ERClassList>
+      </Labels>
+      <Vendor>
+        <ERVendor Name="Microsoft" Url="http://microsoft.com" />
+      </Vendor>
+      <Contents.>
+        <Ref. ID.="{1DDE3D6C-CA66-442E-83AA-0796AE63277F}" />
+        <Ref. ID.="{84AAF5FE-8DF1-4D2F-A082-4EE8A34B8E0D}" />
+        <Ref. ID.="{CDBE4D64-5DBB-4BF7-AB1F-255B1273AEE3}" />
+      </Contents.>
+    </ERSolution>
+  </Solution>
+  <Contents.>
+    <ERModelMappingVersion ID.="{1DDE3D6C-CA66-442E-83AA-0796AE63277F},4" DateTime="2024-02-06T08:23:09" Description="ID854065" Number="4">
+      <Mapping>
+        <ERModelMapping ID.="{1DDE3D6C-CA66-442E-83AA-0796AE63277F}" DataContainerDescriptor="WebApplicationLog_VAT_NO" Model="{E5EBF897-98BE-48A6-8931-E29C65DA26AE}" ModelName="ElectronicMessageFrameworkModel" ModelVersion="{E5EBF897-98BE-48A6-8931-E29C65DA26AE},44" Name="Web application log format to model mapping">
+          <Binding>
+            <ERDataContainerBinding>
+              <Contents.>
+                <ERDataContainerPathBinding ExpressionAsString="format.WebApplicationRecId" Path="WebApplicationLog/WebApplicationRecId">
+                  <Expression>
+                    <ERExpressionInt64ItemValue ItemPath="format/WebApplicationRecId" />
+                  </Expression>
+                </ERDataContainerPathBinding>
+              </Contents.>
+            </ERDataContainerBinding>
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+              <Contents.>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="format">
+                      <ValueSource>
+                        <ERExportFormatDatasource FormatGUID="{84aaf5fe-8df1-4d2f-a082-4ee8a34b8e0d}" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+              </Contents.>
+            </ERModelDefinition>
+          </Datasource>
+          <Validations>
+            <ERDataContainerBinding />
+          </Validations>
+        </ERModelMapping>
+      </Mapping>
+    </ERModelMappingVersion>
+    <ERFormatVersion ID.="{84AAF5FE-8DF1-4D2F-A082-4EE8A34B8E0D},4" DateTime="2021-11-18T14:05:38" Number="4">
+      <Format>
+        <ERTextFormat ID.="{84AAF5FE-8DF1-4D2F-A082-4EE8A34B8E0D}" DataImportSupport="1" Name="Altinn VAT authorization format (NO)">
+          <EnumList>
+            <EREnumDefinitionList />
+          </EnumList>
+          <Root>
+            <ERTextFormatFileComponent ID.="{662b7d43-0b0e-4550-844b-97ab649c22f1}">
+              <ExtensionParameters>
+                <ERFileExtensionParameters />
+              </ExtensionParameters>
+              <FormattingParameters>
+                <ERFormattingParameters LanguagePreference="1" />
+              </FormattingParameters>
+              <Contents.>
+                <ERTextFormatString ID.="{b8b581d5-87af-48b2-a569-f2de895d354b}" Name="authorizationURL" />
+                <ERTextFormatString ID.="{65a83be2-7aa6-4c39-829d-846baf845d14}" Name="obtainTokenStr" />
+                <ERTextFormatString ID.="{9c761440-0c62-4750-a190-52e4ae7b0120}" Name="refreshTokenStr" />
+                <ERTextFormatJSONObject ID.="{9131a3ef-cf33-4a44-b3bc-a6292504557d}" Name="AltinnTokenRequestHeaderJSON">
+                  <Contents.>
+                    <ERTextFormatJSONProperty ID.="{7078d746-5afc-47af-bebe-b86bafbcd14e}" Name="Authorization">
+                      <Contents.>
+                        <ERTextFormatString ID.="{9af6feaa-7282-430c-af5c-944b0bafdf67}" Transformation="{aa768291-93c8-4cda-95e7-6fb517f6193c}" />
+                      </Contents.>
+                    </ERTextFormatJSONProperty>
+                  </Contents.>
+                </ERTextFormatJSONObject>
+                <ERTextFormatDataItem ID.="{550d9d6e-a1b4-4654-a741-a55fcd94c710}" Mandatory="1" Name="WebApplicationRecId" Type="2" />
+              </Contents.>
+            </ERTextFormatFileComponent>
+          </Root>
+          <TransformationRepository>
+            <ERNamedTransformationsRepository>
+              <Contents.>
+                <ERNamedTextTransformation ID.="{c9283c7e-77c0-41a0-9c54-00ed33634424}" Name="AddQuotes">
+                  <Transformation>
+                    <ERExpressionTransformation ID.="{aa768291-93c8-4cda-95e7-6fb517f6193c}" ExpressionAsString="CONCATENATE(CHAR(34), parameter, CHAR(34))" ParameterType="6" SyntaxVersion="1">
+                      <Expression>
+                        <ERExpressionStringConcatenate>
+                          <Contents.>
+                            <ERExpressionStringChar>
+                              <Input>
+                                <ERExpressionIntConstant Value="34" />
+                              </Input>
+                            </ERExpressionStringChar>
+                            <ERExpressionStringItemValue ItemPath="parameter" />
+                            <ERExpressionStringChar>
+                              <Input>
+                                <ERExpressionIntConstant Value="34" />
+                              </Input>
+                            </ERExpressionStringChar>
+                          </Contents.>
+                        </ERExpressionStringConcatenate>
+                      </Expression>
+                    </ERExpressionTransformation>
+                  </Transformation>
+                </ERNamedTextTransformation>
+              </Contents.>
+            </ERNamedTransformationsRepository>
+          </TransformationRepository>
+        </ERTextFormat>
+      </Format>
+    </ERFormatVersion>
+    <ERFormatMappingVersion ID.="{CDBE4D64-5DBB-4BF7-AB1F-255B1273AEE3},7" DateTime="2024-02-06T08:23:09" Description="ID854065" Number="7">
+      <Mapping>
+        <ERFormatMapping ID.="{CDBE4D64-5DBB-4BF7-AB1F-255B1273AEE3}" Format="{84AAF5FE-8DF1-4D2F-A082-4EE8A34B8E0D}" FormatVersion="{84AAF5FE-8DF1-4D2F-A082-4EE8A34B8E0D},4" Name="Altinn VAT authorization format (NO)">
+          <Binding>
+            <ERFormatBinding>
+              <Contents.>
+                <ERFormatComponentPropertyBinding Component="{65a83be2-7aa6-4c39-829d-846baf845d14}" ExpressionAsString="CONCATENATE(&#xA;&quot;grant_type=&quot;, &quot;authorization_code&quot;,&#xA;&quot;&amp;client_id=&quot;, model.WebApplication.ClientId,&#xA;&quot;&amp;client_secret=&quot;, model.WebApplication.ClientSecret,&#xA;&quot;&amp;code=&quot;, '$AuthorizationCode',&#xA;&quot;&amp;redirect_uri=&quot;, model.WebApplication.RedirectURL,&#xA;&quot;&amp;code_verifier=&quot;, model.WebApplication.CodeVerifier)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConcatenate>
+                      <Contents.>
+                        <ERExpressionStringConstant Value="grant_type=" />
+                        <ERExpressionStringConstant Value="authorization_code" />
+                        <ERExpressionStringConstant Value="&amp;client_id=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientId" />
+                        <ERExpressionStringConstant Value="&amp;client_secret=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientSecret" />
+                        <ERExpressionStringConstant Value="&amp;code=" />
+                        <ERExpressionStringItemValue ItemPath="$AuthorizationCode" />
+                        <ERExpressionStringConstant Value="&amp;redirect_uri=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/RedirectURL" />
+                        <ERExpressionStringConstant Value="&amp;code_verifier=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/CodeVerifier" />
+                      </Contents.>
+                    </ERExpressionStringConcatenate>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{9c761440-0c62-4750-a190-52e4ae7b0120}" ExpressionAsString="CONCATENATE(&#xA;&quot;grant_type=&quot;, &quot;refresh_token&quot;,&#xA;&quot;&amp;client_id=&quot;, model.WebApplication.ClientId,&#xA;&quot;&amp;client_secret=&quot;, model.WebApplication.ClientSecret,&#xA;&quot;&amp;refresh_token=&quot;, model.WebApplication.RefreshToken)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConcatenate>
+                      <Contents.>
+                        <ERExpressionStringConstant Value="grant_type=" />
+                        <ERExpressionStringConstant Value="refresh_token" />
+                        <ERExpressionStringConstant Value="&amp;client_id=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientId" />
+                        <ERExpressionStringConstant Value="&amp;client_secret=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientSecret" />
+                        <ERExpressionStringConstant Value="&amp;refresh_token=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/RefreshToken" />
+                      </Contents.>
+                    </ERExpressionStringConcatenate>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{9131a3ef-cf33-4a44-b3bc-a6292504557d}" ExpressionAsString="AND(Mode=&quot;requestHeaders&quot;, model.WebApplication.AdditionalInfo = '$AltinnWebApplicationName')" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionAnd>
+                      <Contents.>
+                        <ERExpressionStringEquals>
+                          <FirstExpression>
+                            <ERExpressionStringItemValue ItemPath="Mode" />
+                          </FirstExpression>
+                          <SecondExpression>
+                            <ERExpressionStringConstant Value="requestHeaders" />
+                          </SecondExpression>
+                        </ERExpressionStringEquals>
+                        <ERExpressionStringEquals>
+                          <FirstExpression>
+                            <ERExpressionStringItemValue ItemPath="model/WebApplication/AdditionalInfo" />
+                          </FirstExpression>
+                          <SecondExpression>
+                            <ERExpressionStringItemValue ItemPath="$AltinnWebApplicationName" />
+                          </SecondExpression>
+                        </ERExpressionStringEquals>
+                      </Contents.>
+                    </ERExpressionAnd>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{9af6feaa-7282-430c-af5c-944b0bafdf67}" ExpressionAsString="CONCATENATE(&quot;Bearer &quot;,  model.WebApplication.AccessToken)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConcatenate>
+                      <Contents.>
+                        <ERExpressionStringConstant Value="Bearer " />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/AccessToken" />
+                      </Contents.>
+                    </ERExpressionStringConcatenate>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{550d9d6e-a1b4-4654-a741-a55fcd94c710}" ExpressionAsString="model.WebApplication.WebApplicationRecId">
+                  <Expression>
+                    <ERExpressionInt64ItemValue ItemPath="model/WebApplication/WebApplicationRecId" />
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{662b7d43-0b0e-4550-844b-97ab649c22f1}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{73547043-b8b4-4f59-b207-107d716959e0}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(Mode=&quot;authorization&quot;, IF(model.WebApplication.IsFoundSystemAdministratorConsentReceived, TRUE, model.WebApplication.WebApplicationRecId &gt; 0), TRUE)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionStringEquals>
+                                      <FirstExpression>
+                                        <ERExpressionStringItemValue ItemPath="Mode" />
+                                      </FirstExpression>
+                                      <SecondExpression>
+                                        <ERExpressionStringConstant Value="authorization" />
+                                      </SecondExpression>
+                                    </ERExpressionStringEquals>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionGenericIf>
+                                      <Condition>
+                                        <ERExpressionBooleanItemValue ItemPath="model/WebApplication/IsFoundSystemAdministratorConsentReceived" />
+                                      </Condition>
+                                      <FalseValue>
+                                        <ERExpressionNumericGreater>
+                                          <FirstExpression>
+                                            <ERExpressionInt64ItemValue ItemPath="model/WebApplication/WebApplicationRecId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionIntConstant />
+                                          </SecondExpression>
+                                        </ERExpressionNumericGreater>
+                                      </FalseValue>
+                                      <TrueValue>
+                                        <ERExpressionBooleanConstant Value="1" />
+                                      </TrueValue>
+                                    </ERExpressionGenericIf>
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:SystemAdministratorConsentWasCanceled&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:SystemAdministratorConsentWasCanceled" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{b8b581d5-87af-48b2-a569-f2de895d354b}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{b23d1ff6-6219-4255-8f22-af0cdaaf7a5d}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsAuthorizationURLEnabled', model.WebApplication.ClientId = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsAuthorizationURLEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:CliendIdCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:CliendIdCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{cf2d37f6-340d-493f-8dad-10e81ad9abef}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsAuthorizationURLEnabled', model.WebApplication.RedirectURL = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsAuthorizationURLEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/RedirectURL" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:RedirectUrlCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:RedirectUrlCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{65a83be2-7aa6-4c39-829d-846baf845d14}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{077f4dda-1f81-4c73-81eb-db44be85df70}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsObtainTokenStrEnabled', model.WebApplication.ClientId = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsObtainTokenStrEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:CliendIdCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:CliendIdCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{b6d43430-34d9-4e70-9aaf-5d26af8e5029}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsObtainTokenStrEnabled', model.WebApplication.ClientSecret = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsObtainTokenStrEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientSecret" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:ClientSecretCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:ClientSecretCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{f42220be-707e-4378-8099-c4c6a6a00de7}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsObtainTokenStrEnabled', model.WebApplication.RedirectURL = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsObtainTokenStrEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/RedirectURL" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:RedirectUrlCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:RedirectUrlCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{9c761440-0c62-4750-a190-52e4ae7b0120}" ExpressionAsString="Mapping validations" PropertyName="Validation">
+                  <Expression>
+                    <ERExpressionValidationConditions>
+                      <Contents.>
+                        <ERExpressionValidationCondition ID.="{2d29a47c-3555-49ea-a90c-ffb5287d1a58}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsRefreshTokenStrEnabled', model.WebApplication.ClientId = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsRefreshTokenStrEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientId" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:CliendIdCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:CliendIdCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{f1ad0020-e9d1-48ac-afc2-f4d942f9c845}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsRefreshTokenStrEnabled', model.WebApplication.ClientSecret = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsRefreshTokenStrEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientSecret" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:ClientSecretCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:ClientSecretCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                        <ERExpressionValidationCondition ID.="{abbee13d-e3e3-46a4-bc02-0d14bfd308e1}">
+                          <ConditionHost>
+                            <ERExpressionBooleanHost ExpressionAsString="IF(AND('$IsRefreshTokenStrEnabled', model.WebApplication.RefreshToken = &quot;&quot;), false, true)" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionGenericIf>
+                                  <Condition>
+                                    <ERExpressionAnd>
+                                      <Contents.>
+                                        <ERExpressionBooleanItemValue ItemPath="$IsRefreshTokenStrEnabled" />
+                                        <ERExpressionStringEquals>
+                                          <FirstExpression>
+                                            <ERExpressionStringItemValue ItemPath="model/WebApplication/RefreshToken" />
+                                          </FirstExpression>
+                                          <SecondExpression>
+                                            <ERExpressionStringConstant />
+                                          </SecondExpression>
+                                        </ERExpressionStringEquals>
+                                      </Contents.>
+                                    </ERExpressionAnd>
+                                  </Condition>
+                                  <FalseValue>
+                                    <ERExpressionBooleanConstant Value="1" />
+                                  </FalseValue>
+                                  <TrueValue>
+                                    <ERExpressionBooleanConstant />
+                                  </TrueValue>
+                                </ERExpressionGenericIf>
+                              </Expression>
+                            </ERExpressionBooleanHost>
+                          </ConditionHost>
+                          <MessageHost>
+                            <ERExpressionStringHost ExpressionAsString="@&quot;GER_LABEL:RefreshTokenCannotBeEmpty&quot;" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionStringLabel>
+                                  <LabelId>
+                                    <ERExpressionStringConstant Value="GER_LABEL:RefreshTokenCannotBeEmpty" />
+                                  </LabelId>
+                                </ERExpressionStringLabel>
+                              </Expression>
+                            </ERExpressionStringHost>
+                          </MessageHost>
+                        </ERExpressionValidationCondition>
+                      </Contents.>
+                    </ERExpressionValidationConditions>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{9c761440-0c62-4750-a190-52e4ae7b0120}" ExpressionAsString="'$IsRefreshTokenStrEnabled'" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionBooleanItemValue ItemPath="$IsRefreshTokenStrEnabled" />
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{65a83be2-7aa6-4c39-829d-846baf845d14}" ExpressionAsString="'$IsObtainTokenStrEnabled'" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionBooleanItemValue ItemPath="$IsObtainTokenStrEnabled" />
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{b8b581d5-87af-48b2-a569-f2de895d354b}" ExpressionAsString="'$IsAuthorizationURLEnabled'" PropertyName="Enabled" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionBooleanItemValue ItemPath="$IsAuthorizationURLEnabled" />
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+                <ERFormatComponentPropertyBinding Component="{b8b581d5-87af-48b2-a569-f2de895d354b}" ExpressionAsString="CONCATENATE(&#xA;&quot;?response_type=code&quot;,&#xA;&quot;&amp;client_id=&quot;, model.WebApplication.ClientId,&#xA;&quot;&amp;redirect_uri=&quot;, model.WebApplication.RedirectURL,&#xA;&quot;&amp;scope=&quot;, &quot;openid skatteetaten:mvameldingvalidering skatteetaten:mvameldinginnsending&quot;,&#xA;&quot;&amp;state=&quot;, model.WebApplication.State,&#xA;&quot;&amp;nonce=&quot;, model.WebApplication.Nonce,&#xA;CASE(RequestedSecurityLevel,&#xA;    '$RequestedSecurityLevel'.NotUse, &quot;&quot;,&#xA;    '$RequestedSecurityLevel'.Low, &quot;&amp;acr_values=idporten-loa-low&quot;,&#xA;    '$RequestedSecurityLevel'.Substantial, &quot;&amp;acr_values=idporten-loa-substantial&quot;,&#xA;    '$RequestedSecurityLevel'.High, &quot;&amp;acr_values=idporten-loa-high&quot;,&#xA;    &quot;&quot;),&#xA;IF(Language = &quot;&quot;, &quot;&quot;, CONCATENATE(&quot;&amp;ui_locales=&quot;, Language)),&#xA;&quot;&amp;code_challenge=&quot;, model.WebApplication.CodeChallenge,&#xA;&quot;&amp;code_challenge_method=&quot;, &quot;S256&quot;)" SyntaxVersion="1">
+                  <Expression>
+                    <ERExpressionStringConcatenate>
+                      <Contents.>
+                        <ERExpressionStringConstant Value="?response_type=code" />
+                        <ERExpressionStringConstant Value="&amp;client_id=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/ClientId" />
+                        <ERExpressionStringConstant Value="&amp;redirect_uri=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/RedirectURL" />
+                        <ERExpressionStringConstant Value="&amp;scope=" />
+                        <ERExpressionStringConstant Value="openid skatteetaten:mvameldingvalidering skatteetaten:mvameldinginnsending" />
+                        <ERExpressionStringConstant Value="&amp;state=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/State" />
+                        <ERExpressionStringConstant Value="&amp;nonce=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/Nonce" />
+                        <ERExpressionStringAdapter>
+                          <Expression>
+                            <ERExpressionGenericCase>
+                              <Contents.>
+                                <ERExpressionEnumItemValue ItemPath="RequestedSecurityLevel" />
+                                <ERExpressionEnumItemValue ItemPath="$RequestedSecurityLevel/NotUse" />
+                                <ERExpressionStringConstant />
+                                <ERExpressionEnumItemValue ItemPath="$RequestedSecurityLevel/Low" />
+                                <ERExpressionStringConstant Value="&amp;acr_values=idporten-loa-low" />
+                                <ERExpressionEnumItemValue ItemPath="$RequestedSecurityLevel/Substantial" />
+                                <ERExpressionStringConstant Value="&amp;acr_values=idporten-loa-substantial" />
+                                <ERExpressionEnumItemValue ItemPath="$RequestedSecurityLevel/High" />
+                                <ERExpressionStringConstant Value="&amp;acr_values=idporten-loa-high" />
+                                <ERExpressionStringConstant />
+                              </Contents.>
+                            </ERExpressionGenericCase>
+                          </Expression>
+                        </ERExpressionStringAdapter>
+                        <ERExpressionStringAdapter>
+                          <Expression>
+                            <ERExpressionGenericIf>
+                              <Condition>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="Language" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Condition>
+                              <FalseValue>
+                                <ERExpressionStringConcatenate>
+                                  <Contents.>
+                                    <ERExpressionStringConstant Value="&amp;ui_locales=" />
+                                    <ERExpressionStringItemValue ItemPath="Language" />
+                                  </Contents.>
+                                </ERExpressionStringConcatenate>
+                              </FalseValue>
+                              <TrueValue>
+                                <ERExpressionStringConstant />
+                              </TrueValue>
+                            </ERExpressionGenericIf>
+                          </Expression>
+                        </ERExpressionStringAdapter>
+                        <ERExpressionStringConstant Value="&amp;code_challenge=" />
+                        <ERExpressionStringItemValue ItemPath="model/WebApplication/CodeChallenge" />
+                        <ERExpressionStringConstant Value="&amp;code_challenge_method=" />
+                        <ERExpressionStringConstant Value="S256" />
+                      </Contents.>
+                    </ERExpressionStringConcatenate>
+                  </Expression>
+                </ERFormatComponentPropertyBinding>
+              </Contents.>
+            </ERFormatBinding>
+          </Binding>
+          <Datasource>
+            <ERModelDefinition>
+              <PathsToCache>
+                <ERPathsToCache />
+              </PathsToCache>
+              <Contents.>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="model">
+                      <ValueSource>
+                        <ERModelDataSourceHandler DataContainerDescriptorName="WebApplication_Export_VAT_NO" ModelGuid="{e5ebf897-98be-48a6-8931-e29c65da26ae}" RevisionNumber="44" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$AltinnWebApplicationName">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="&quot;NO Altinn&quot;" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringConstant Value="NO Altinn" />
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="Mode">
+                      <ValueSource>
+                        <ERUserParameterDataSourceHandler ExtendedDataTypeName="Description" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Label="@GER_LABEL:RequestedLanguage" Name="Language">
+                      <ValueSource>
+                        <ERUserParameterDataSourceHandler ExpressionAsString="Mode = &quot;authorization&quot;" ExtendedDataTypeName="Description" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionStringEquals>
+                              <FirstExpression>
+                                <ERExpressionStringItemValue ItemPath="Mode" />
+                              </FirstExpression>
+                              <SecondExpression>
+                                <ERExpressionStringConstant Value="authorization" />
+                              </SecondExpression>
+                            </ERExpressionStringEquals>
+                          </Expression>
+                        </ERUserParameterDataSourceHandler>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="AuthorizationCode">
+                      <ValueSource>
+                        <ERUserParameterDataSourceHandler ExpressionAsString="AND(&#xA;Mode = &quot;obtainToken&quot;, &#xA;model.WebApplication.AdditionalInfo &lt;&gt; '$AltinnWebApplicationName',&#xA;model.WebApplication.AuthorizationCode = &quot;&quot;)" ExtendedDataTypeName="EMWebApplicationAuthorizationCode" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionAnd>
+                              <Contents.>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="Mode" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant Value="obtainToken" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                                <ERExpressionStringNotEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/WebApplication/AdditionalInfo" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="$AltinnWebApplicationName" />
+                                  </SecondExpression>
+                                </ERExpressionStringNotEquals>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/WebApplication/AuthorizationCode" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                              </Contents.>
+                            </ERExpressionAnd>
+                          </Expression>
+                        </ERUserParameterDataSourceHandler>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$AuthorizationCode">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="IF(model.WebApplication.AuthorizationCode &lt;&gt; &quot;&quot;,&#xA;model.WebApplication.AuthorizationCode,&#xA;AuthorizationCode)" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionGenericIf>
+                              <Condition>
+                                <ERExpressionStringNotEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/WebApplication/AuthorizationCode" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant />
+                                  </SecondExpression>
+                                </ERExpressionStringNotEquals>
+                              </Condition>
+                              <FalseValue>
+                                <ERExpressionStringItemValue ItemPath="AuthorizationCode" />
+                              </FalseValue>
+                              <TrueValue>
+                                <ERExpressionStringItemValue ItemPath="model/WebApplication/AuthorizationCode" />
+                              </TrueValue>
+                            </ERExpressionGenericIf>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$IsRefreshTokenStrEnabled">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="AND(Mode=&quot;refreshToken&quot;, model.WebApplication.AdditionalInfo&lt;&gt;'$AltinnWebApplicationName')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionAnd>
+                              <Contents.>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="Mode" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant Value="refreshToken" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                                <ERExpressionStringNotEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/WebApplication/AdditionalInfo" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="$AltinnWebApplicationName" />
+                                  </SecondExpression>
+                                </ERExpressionStringNotEquals>
+                              </Contents.>
+                            </ERExpressionAnd>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$IsObtainTokenStrEnabled">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="AND(Mode=&quot;obtainToken&quot;, model.WebApplication.AdditionalInfo&lt;&gt;'$AltinnWebApplicationName')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionAnd>
+                              <Contents.>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="Mode" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant Value="obtainToken" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                                <ERExpressionStringNotEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/WebApplication/AdditionalInfo" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="$AltinnWebApplicationName" />
+                                  </SecondExpression>
+                                </ERExpressionStringNotEquals>
+                              </Contents.>
+                            </ERExpressionAnd>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$IsAuthorizationURLEnabled">
+                      <ValueSource>
+                        <ERModelExpressionItem ExpressionAsString="AND(Mode=&quot;authorization&quot;, model.WebApplication.AdditionalInfo&lt;&gt;'$AltinnWebApplicationName')" SyntaxVersion="1">
+                          <Expression>
+                            <ERExpressionAnd>
+                              <Contents.>
+                                <ERExpressionStringEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="Mode" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringConstant Value="authorization" />
+                                  </SecondExpression>
+                                </ERExpressionStringEquals>
+                                <ERExpressionStringNotEquals>
+                                  <FirstExpression>
+                                    <ERExpressionStringItemValue ItemPath="model/WebApplication/AdditionalInfo" />
+                                  </FirstExpression>
+                                  <SecondExpression>
+                                    <ERExpressionStringItemValue ItemPath="$AltinnWebApplicationName" />
+                                  </SecondExpression>
+                                </ERExpressionStringNotEquals>
+                              </Contents.>
+                            </ERExpressionAnd>
+                          </Expression>
+                        </ERModelExpressionItem>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Name="$RequestedSecurityLevel">
+                      <ValueSource>
+                        <ERModelEnumDataSourceHandler ModelEnumName="RequestedSecurityLevel" ModelGuid="{e5ebf897-98be-48a6-8931-e29c65da26ae}" RevisionNumber="44" />
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+                <ERModelItemDefinition>
+                  <ValueDefinition>
+                    <ERModelItemValueDefinition Label="@GER_LABEL:RequestedSecurityLevel" Name="RequestedSecurityLevel">
+                      <ValueSource>
+                        <EREnumParameterDataSourceHandler ExpressionAsString="Mode = &quot;authorization&quot;" ModelEnumName="RequestedSecurityLevel" ModelGUID="{e5ebf897-98be-48a6-8931-e29c65da26ae}" RevisionNumber="44" SyntaxVersion="1">
+                          <DefaultValueExpression>
+                            <ERDataSourceParameterExpression ExpressionAsString="'$RequestedSecurityLevel'.NotUse" SyntaxVersion="1">
+                              <Expression>
+                                <ERExpressionEnumItemValue ItemPath="$RequestedSecurityLevel/NotUse" />
+                              </Expression>
+                            </ERDataSourceParameterExpression>
+                          </DefaultValueExpression>
+                          <Expression>
+                            <ERExpressionStringEquals>
+                              <FirstExpression>
+                                <ERExpressionStringItemValue ItemPath="Mode" />
+                              </FirstExpression>
+                              <SecondExpression>
+                                <ERExpressionStringConstant Value="authorization" />
+                              </SecondExpression>
+                            </ERExpressionStringEquals>
+                          </Expression>
+                        </EREnumParameterDataSourceHandler>
+                      </ValueSource>
+                    </ERModelItemValueDefinition>
+                  </ValueDefinition>
+                </ERModelItemDefinition>
+              </Contents.>
+            </ERModelDefinition>
+          </Datasource>
+        </ERFormatMapping>
+      </Mapping>
+    </ERFormatMappingVersion>
+  </Contents.>
+</ERSolutionVersion>
